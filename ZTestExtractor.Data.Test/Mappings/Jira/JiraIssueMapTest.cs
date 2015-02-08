@@ -15,8 +15,7 @@ namespace ZTestExtractor.Data.Test.Mappings.Jira
         [Test]
         public void JiraIssueMapVerification()
         {
-            var session = CreateSession();
-            new PersistenceSpecification<JiraIssue>(session)
+            new PersistenceSpecification<JiraIssue>(Session)
                 .CheckProperty(p => p.Id, 1)
                 .CheckProperty(p => p.Creator, "Magnus")
                 .CheckProperty(p => p.Description, "An issue!")

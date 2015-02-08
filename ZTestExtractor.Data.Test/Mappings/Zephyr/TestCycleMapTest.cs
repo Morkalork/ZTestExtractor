@@ -16,15 +16,13 @@ namespace ZTestExtractor.Data.Test.Mappings.Zephyr
         [Test]
         public void TestCycleMapVerification()
         {
-            var session = CreateSession();
-
-                new PersistenceSpecification<TestCycle>(session)
-                    .CheckProperty(p => p.Id, 1)
-                    .CheckProperty(p => p.CreatedBy, "Magnus")
-                    .CheckProperty(p => p.Description, "Foo")
-                    .CheckProperty(p => p.Name, "Test cycle 1")
-                    .CheckReference(p => p.Project, new JiraProject { Id = 5, Key = "TEST" })
-                    .VerifyTheMappings();
+            new PersistenceSpecification<TestCycle>(Session)
+                .CheckProperty(p => p.Id, 1)
+                .CheckProperty(p => p.CreatedBy, "Magnus")
+                .CheckProperty(p => p.Description, "Foo")
+                .CheckProperty(p => p.Name, "Test cycle 1")
+                .CheckReference(p => p.Project, new JiraProject { Id = 5, Key = "TEST" })
+                .VerifyTheMappings();
         }
     }
 }

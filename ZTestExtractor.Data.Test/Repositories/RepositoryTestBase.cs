@@ -1,17 +1,33 @@
 ﻿using NHibernate;
+using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ZTestExtractor.Core.Interfaces.Data;
+using ZTestExtractor.Repositories;
 
 namespace ZTestExtractor.Data.Test.Repositories
 {
-    public abstract class RepositoryTestBase
+    [TestFixture]
+    public abstract class RepositoryTestBase<TRepository>
+        where TRepository : RepositoryBase
     {
-        public ISession CreateSession()
+        public ISession Session { get; set; }
+        public TRepository Repository { get; set; }
+
+        [SetUp]
+        public void CreateSessionAndRepository()
         {
-            return TestSessionFactory.OpenSession();
+            Session = TestSessionFactory.OpenSession();
+            Repository = (TRepository)Activator.CreateInstance(typeof(TRepository), Session);
+        }
+
+        [TearDown]
+        public void DestroySession()
+        {
+            Session = null;
         }
     }
 }

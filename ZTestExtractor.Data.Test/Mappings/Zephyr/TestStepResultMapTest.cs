@@ -16,12 +16,10 @@ namespace ZTestExtractor.Data.Test.Mappings.Zephyr
         [Test]
         public void TestStepMapVerification()
         {
-            var session = CreateSession();
-
             var project = new JiraProject { Key = "TEST", Name = "Test project" };
-            using (var transaction = session.BeginTransaction())
+            using (var transaction = Session.BeginTransaction())
             {
-                session.Save(project);
+                Session.Save(project);
 
                 JiraIssue issue = new JiraIssue
                 {
@@ -50,12 +48,12 @@ namespace ZTestExtractor.Data.Test.Mappings.Zephyr
                     Schedule = schedule
                 };
 
-                session.Save(issue);
-                session.Save(cycle);
-                session.Save(schedule);
-                session.Save(step);
+                Session.Save(issue);
+                Session.Save(cycle);
+                Session.Save(schedule);
+                Session.Save(step);
 
-                new PersistenceSpecification<TestStepResult>(session)
+                new PersistenceSpecification<TestStepResult>(Session)
                     .CheckProperty(p => p.Id, 1)
                     .CheckProperty(p => p.Comment, "No comment")
                     .CheckProperty(p => p.CreatedBy, "Magnus")

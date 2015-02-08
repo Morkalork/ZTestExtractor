@@ -1,4 +1,5 @@
 ﻿using NHibernate;
+using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,11 +9,21 @@ using ZTestExtractor.Database;
 
 namespace ZTestExtractor.Data.Test.Mappings
 {
+    [TestFixture]
     public abstract class MapTestBase
     {
-        public ISession CreateSession()
+        public ISession Session { get; private set; }
+
+        [SetUp]
+        public void CreateSession()
         {
-            return TestSessionFactory.OpenSession();
+            Session = TemporaryTestSessionFactory.OpenTemporarySession();
+        }
+
+        [TearDown]
+        public void DestroySession()
+        {
+            Session = null;
         }
     }
 }

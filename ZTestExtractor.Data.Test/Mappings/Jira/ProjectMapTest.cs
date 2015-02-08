@@ -15,10 +15,8 @@ namespace ZTestExtractor.Data.Test.Mappings.Jira
         [Test]
         public void ProjectMapVerification()
         {
-            var session = CreateSession();
-
             //TODO: Test issue collection!
-            new PersistenceSpecification<JiraProject>(session)
+            new PersistenceSpecification<JiraProject>(Session)
                 .CheckProperty(p => p.Id, 1)
                 .CheckProperty(p => p.Key, "Foo")
                 .CheckProperty(p => p.Name, "Bar")
