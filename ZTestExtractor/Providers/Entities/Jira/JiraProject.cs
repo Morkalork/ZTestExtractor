@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace ZTestExtractor.Entities.Jira
 {
-    public class JiraProject
+    public class JiraProject : Entity
     {
-        public virtual int Id { get; set; }
-
         public virtual string Name { get; set; }
 
         public virtual string Key { get; set; }

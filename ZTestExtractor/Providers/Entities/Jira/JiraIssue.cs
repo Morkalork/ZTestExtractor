@@ -7,10 +7,8 @@ using ZTestExtractor.Entities.Zephyr;
 
 namespace ZTestExtractor.Entities.Jira
 {
-    public class JiraIssue
+    public class JiraIssue : Entity
     {
-        public virtual int Id { get; set; }
-
         public virtual string Creator { get; set; }
 
         public virtual string Description { get; set; }

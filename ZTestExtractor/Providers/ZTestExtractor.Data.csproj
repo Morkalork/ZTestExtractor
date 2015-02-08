@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Database\SessionFactory.cs" />
+    <Compile Include="Entities\Entity.cs" />
     <Compile Include="Entities\Jira\JiraIssue.cs" />
     <Compile Include="Entities\Jira\JiraProject.cs" />
     <Compile Include="Entities\Zephyr\TestSchedule.cs" />
