@@ -1,0 +1,59 @@
+﻿using FluentNHibernate.Testing;
+using NUnit.Framework;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using ZTestExtractor.Entities.Jira;
+using ZTestExtractor.Entities.Zephyr;
+
+namespace ZTestExtractor.Data.Test.Mappings.Zephyr
+{
+    [TestFixture]
+    public class TestScheduleMapTest : MapTestBase
+    {
+        [Test]
+        public void TestScheduleMapVerification()
+        {
+            var session = CreateSession();
+
+            var project = new JiraProject { Key = "TEST", Name = "Test project" };
+            using (var transaction = session.BeginTransaction())
+            {
+                session.Save(project);
+
+                JiraIssue issue = new JiraIssue
+                {
+                    Id = 1,
+                    Project = project
+                };
+
+                TestCycle cycle = new TestCycle
+                {
+                    Id = 1,
+                    Name = "Test Cycle",
+                    Project = project,
+                    Description = "A test cycle"
+                };
+
+                session.Save(issue);
+                session.Save(cycle);
+
+                new PersistenceSpecification<TestSchedule>(session)
+                    .CheckProperty(p => p.Id, 1)
+                    .CheckProperty(p => p.CreatedBy, "Magnus")
+                    .CheckProperty(p => p.CreatedDate, DateTime.Today)
+                    .CheckProperty(p => p.Assignee, "Magnus")
+                    .CheckProperty(p => p.Comment, "Hello World!")
+                    .CheckProperty(p => p.ExecutedBy, "Jim")
+                    .CheckProperty(p => p.Order, 1)
+                    .CheckProperty(p => p.Status, ZTestExtractor.Entities.Zephyr.TestStatus.Pass)
+                    .CheckReference(p => p.Project, project)
+                    .CheckReference(p => p.Issue, issue)
+                    .CheckReference(p => p.Cycle, cycle)
+                    .VerifyTheMappings();
+            }
+        }
+    }
+}
