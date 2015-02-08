@@ -17,7 +17,7 @@ namespace ZTestExtractor.EntityMappings.Jira
 
             Id(x => x.Id, "ID");
 
-            Map(x => x.Creator, "CREATOR");
+            Map(x => x.CreatedBy, "CREATOR");
             Map(x => x.Description, "DESCRIPTION");
             Map(x => x.Summary, "SUMMARY");
 

@@ -9,7 +9,7 @@ namespace ZTestExtractor.Entities.Jira
 {
     public class JiraIssue : Entity
     {
-        public virtual string Creator { get; set; }
+        public virtual string CreatedBy { get; set; }
 
         public virtual string Description { get; set; }
 

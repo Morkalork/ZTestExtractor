@@ -67,6 +67,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Jira\JiraProjectRepository.cs" />
     <Compile Include="Repositories\RepositoryBase.cs" />
+    <Compile Include="Repositories\Zephyr\TestCycleRepository.cs" />
+    <Compile Include="Repositories\Zephyr\TestScheduleRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Mappings\" />

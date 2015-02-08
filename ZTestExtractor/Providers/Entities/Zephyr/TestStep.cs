@@ -20,7 +20,7 @@ namespace ZTestExtractor.Entities.Zephyr
         /// </summary>
         public virtual string Step { get; set; }
 
-        public virtual string Result { get; set; }
+        public virtual string ExpectedResult { get; set; }
 
         public virtual string Data { get; set; }
 

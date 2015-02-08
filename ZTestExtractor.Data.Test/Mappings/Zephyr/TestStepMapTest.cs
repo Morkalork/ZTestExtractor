@@ -33,7 +33,7 @@ namespace ZTestExtractor.Data.Test.Mappings.Zephyr
                     .CheckProperty(p => p.Id, 1)
                     .CheckProperty(p => p.Data, "Data")
                     .CheckProperty(p => p.Order, 1)
-                    .CheckProperty(p => p.Result, "Result")
+                    .CheckProperty(p => p.ExpectedResult, "Result")
                     .CheckProperty(p => p.Step, "Step")
                     .CheckReference(p => p.Issue, issue)
                     .VerifyTheMappings();

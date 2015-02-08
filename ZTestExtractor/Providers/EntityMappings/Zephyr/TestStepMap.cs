@@ -20,7 +20,7 @@ namespace ZTestExtractor.EntityMappings.Zephyr
             Map(x => x.Data, "DATA");
             Map(x => x.Order, "ORDER_ID");
             Map(x => x.Step, "STEP");
-            Map(x => x.Result, "RESULT");
+            Map(x => x.ExpectedResult, "RESULT");
 
             References<JiraIssue>(x => x.Issue)
                 .ForeignKey("ISSUE_ID")
