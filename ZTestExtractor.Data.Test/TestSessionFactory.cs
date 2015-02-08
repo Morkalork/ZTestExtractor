@@ -15,25 +15,18 @@ namespace ZTestExtractor.Data.Test
 {
     public static class TestSessionFactory
     {
-        private static ISession _session;
-
         public static ISession OpenSession()
         {
-            if (_session == null)
-            {
-                var sessionFactory = Fluently.Configure()
-                    .Database(
-                        SQLiteConfiguration.Standard
-                        .UsingFile("unitTest.db")
-                    )
-                    .Mappings(m => m.FluentMappings.AddFromAssemblyOf<JiraIssue>())
-                    .ExposeConfiguration(BuildSchema)
-                    .BuildSessionFactory();
+            var sessionFactory = Fluently.Configure()
+                .Database(
+                    SQLiteConfiguration.Standard
+                    .UsingFile("unitTest.db")
+                )
+                .Mappings(m => m.FluentMappings.AddFromAssemblyOf<JiraIssue>())
+                .ExposeConfiguration(BuildSchema)
+                .BuildSessionFactory();
 
-                _session = sessionFactory.OpenSession();
-            }
-
-            return _session;
+            return sessionFactory.OpenSession();
         }
 
         private static void BuildSchema(Configuration config)

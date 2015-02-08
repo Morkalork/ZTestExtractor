@@ -11,8 +11,9 @@ using ZTestExtractor.Repositories;
 namespace ZTestExtractor.Data.Test.Repositories
 {
     [TestFixture]
-    public abstract class RepositoryTestBase<TRepository>
-        where TRepository : RepositoryBase
+    public abstract class RepositoryTestBase<TRepository, TEntity>
+        where TEntity : class, IEntity
+        where TRepository : RepositoryBase<TEntity>
     {
         public ISession Session { get; set; }
         public TRepository Repository { get; set; }

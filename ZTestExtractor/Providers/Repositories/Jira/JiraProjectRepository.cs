@@ -9,16 +9,9 @@ using ZTestExtractor.Entities.Jira;
 
 namespace ZTestExtractor.Repositories.Jira
 {
-    public class JiraProjectRepository : RepositoryBase
+    public class JiraProjectRepository : RepositoryBase<JiraProject>
     {
         public JiraProjectRepository(ISession session) : base(session)
         { }
-
-        public IEnumerable<JiraProject> GetAll()
-        {
-            return Session
-                .CreateCriteria<JiraProject>()
-                .List<JiraProject>();
-        }
     }
 }

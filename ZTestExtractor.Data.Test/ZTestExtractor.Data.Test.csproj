@@ -64,6 +64,7 @@
     <Compile Include="Mappings\Zephyr\TestStepResultMapTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Jira\JiraProjectRepositoryTest.cs" />
+    <Compile Include="Repositories\RepositoryBaseTest.cs" />
     <Compile Include="Repositories\RepositoryTestBase.cs" />
     <Compile Include="TemporaryTestSessionFactory.cs" />
     <Compile Include="TestSessionFactory.cs" />
