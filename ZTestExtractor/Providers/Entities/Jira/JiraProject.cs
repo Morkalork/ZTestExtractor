@@ -8,11 +8,16 @@ namespace ZTestExtractor.Entities.Jira
 {
     public class JiraProject : Entity
     {
+        public JiraProject()
+        {
+            Issues = new List<JiraIssue>();
+        }
+
         public virtual string Name { get; set; }
 
         public virtual string Key { get; set; }
 
-        public virtual ICollection<JiraIssue> Issues { get; set; }
+        public virtual IList<JiraIssue> Issues { get; set; }
 
         public override bool Equals(object obj)
         {

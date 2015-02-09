@@ -70,9 +70,7 @@
     <Compile Include="Repositories\Zephyr\TestCycleRepository.cs" />
     <Compile Include="Repositories\Zephyr\TestScheduleRepository.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Mappings\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\..\ZTestExtractor.Core\ZTestExtractor.Core.csproj">
       <Project>{59c4f8bc-01bf-426e-a49f-449d955ce601}</Project>

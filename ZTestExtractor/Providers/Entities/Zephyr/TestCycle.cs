@@ -9,6 +9,10 @@ namespace ZTestExtractor.Entities.Zephyr
 {
     public class TestCycle : Entity
     {
+        public TestCycle()
+        {
+            Schedules = new List<TestSchedule>();
+        }
         public virtual string Description { get; set; }
 
         public virtual string CreatedBy { get; set; }
@@ -16,6 +20,8 @@ namespace ZTestExtractor.Entities.Zephyr
         public virtual string Name { get; set; }
 
         public virtual JiraProject Project { get; set; }
+
+        public virtual IList<TestSchedule> Schedules { get; set; }
 
         public override bool Equals(object obj)
         {

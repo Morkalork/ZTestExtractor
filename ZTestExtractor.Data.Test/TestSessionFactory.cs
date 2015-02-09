@@ -19,7 +19,9 @@ namespace ZTestExtractor.Data.Test
         {
             var sessionFactory = Fluently.Configure()
                 .Database(
-                    SQLiteConfiguration.Standard
+                    SQLiteConfiguration
+                    .Standard
+                    .ShowSql()
                     .UsingFile("unitTest.db")
                 )
                 .Mappings(m => m.FluentMappings.AddFromAssemblyOf<JiraIssue>())

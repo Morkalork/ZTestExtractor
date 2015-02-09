@@ -21,8 +21,7 @@ namespace ZTestExtractor.EntityMappings.Jira
 
             HasMany<JiraIssue>(x => x.Issues)
                 .Inverse()
-                .Cascade.AllDeleteOrphan()
-                .AsSet(); //All isues are unique
+                .Cascade.AllDeleteOrphan();
         }
     }
 }
