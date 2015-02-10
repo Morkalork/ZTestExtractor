@@ -20,8 +20,9 @@ namespace ZTestExtractor.EntityMappings.Jira
             Map(x => x.Name, "pname");
 
             HasMany<JiraIssue>(x => x.Issues)
+                .KeyColumn("PROJECT_ID")
                 .Inverse()
-                .Cascade.AllDeleteOrphan();
+                .Not.LazyLoad();
         }
     }
 }
