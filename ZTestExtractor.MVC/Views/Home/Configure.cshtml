@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "Configure";
+}
+
+<h2>Configure</h2>
+
+<article id="configuration_form">
+    <header>
+        <h3>Jira database settings</h3>
+        <p>These are the settings used to connect ZTest Extractor with your Jira instance</p>
+    </header>
+    <section>
+        <p class="title">Server</p>
+        <p><input type="text" id="server_name" placeholder="The name of your database server" /></p>
+    </section>
+    <section>
+        <p class="title">Database</p>
+        <p><input type="text" id="database_name" placeholder="The name of your database" /></p>
+    </section>
+    <section>
+        <p class="title">Username</p>
+        <p><input type="text" id="username" placeholder="Your database username" /></p>
+    </section>
+    <section>
+        <p class="title">Password</p>
+        <p><input type="password" id="password" placeholder="Your very secret Jira password" /></p>
+    </section>
+    <section>
+        <p><button id="save_database_settings">Save settings</button></p>
+    </section>
+</article>
