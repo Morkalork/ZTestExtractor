@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ZTestExtractor.Entities.Zephyr;
+using ZTestExtractor.Data.Entities.Zephyr;
 
-namespace ZTestExtractor.Repositories.Zephyr
+namespace ZTestExtractor.Data.Repositories.Zephyr
 {
     public class TestScheduleRepository : RepositoryBase<TestSchedule>
     {

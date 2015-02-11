@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ZTestExtractor.Entities.Jira
+namespace ZTestExtractor.Data.Entities.Jira
 {
     public class JiraProject : Entity
     {

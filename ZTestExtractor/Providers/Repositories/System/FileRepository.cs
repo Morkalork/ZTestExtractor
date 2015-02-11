@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ZTestExtractor.Core.Models.General;
 
-namespace ZTestExtractor.Repositories.System
+namespace ZTestExtractor.Data.Repositories.System
 {
     public class FileRepository
     {

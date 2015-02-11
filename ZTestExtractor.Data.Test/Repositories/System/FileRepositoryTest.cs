@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ZTestExtractor.Repositories.System;
+using ZTestExtractor.Data.Repositories.System;
 
 namespace ZTestExtractor.Data.Test.Repositories.System
 {

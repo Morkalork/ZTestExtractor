@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ZTestExtractor.Core.Interfaces.Data;
-using ZTestExtractor.Entities.Jira;
+using ZTestExtractor.Data.Entities.Jira;
 
-namespace ZTestExtractor.Repositories.Jira
+namespace ZTestExtractor.Data.Repositories.Jira
 {
     public class JiraProjectRepository : RepositoryBase<JiraProject>
     {

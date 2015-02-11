@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ZTestExtractor.Core.Interfaces.Data;
 
-namespace ZTestExtractor.Repositories
+namespace ZTestExtractor.Data.Repositories
 {
     public class RepositoryBase<TEntity> : IRepository<TEntity>
         where TEntity : class, IEntity

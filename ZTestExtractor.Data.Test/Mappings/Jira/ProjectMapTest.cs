@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ZTestExtractor.Entities.Jira;
+using ZTestExtractor.Data.Entities.Jira;
 
 namespace ZTestExtractor.Data.Test.Mappings.Jira
 {

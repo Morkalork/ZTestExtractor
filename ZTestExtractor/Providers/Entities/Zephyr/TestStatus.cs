@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ZTestExtractor.Entities.Zephyr
+namespace ZTestExtractor.Data.Entities.Zephyr
 {
     public enum TestStatus
     {

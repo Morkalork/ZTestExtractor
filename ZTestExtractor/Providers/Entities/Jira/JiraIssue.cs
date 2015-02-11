@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ZTestExtractor.Entities.Zephyr;
+using ZTestExtractor.Data.Entities.Zephyr;
 
-namespace ZTestExtractor.Entities.Jira
+namespace ZTestExtractor.Data.Entities.Jira
 {
     public class JiraIssue : Entity
     {

@@ -5,7 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using ZTestExtractor.Core.Models.Configurations;
 using ZTestExtractor.Core.Models.General;
-using ZTestExtractor.Repositories.System;
+using ZTestExtractor.Data.Repositories.System;
+using ZTestExtractor.Data.Database;
 
 namespace ZTestExtractor.Business.Managers.Configurations
 {
@@ -69,6 +70,11 @@ namespace ZTestExtractor.Business.Managers.Configurations
             }
 
             return result;
+        }
+
+        public bool IsDatabaseConfiguredCorrectly()
+        {
+            return SessionFactory.IsSessionPossible();
         }
     }
 }

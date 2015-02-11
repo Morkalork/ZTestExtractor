@@ -9,16 +9,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ZTestExtractor.Core.Models.Configurations;
-using ZTestExtractor.Entities.Jira;
-using ZTestExtractor.Repositories.System;
+using ZTestExtractor.Data.Entities.Jira;
+using ZTestExtractor.Data.Repositories.System;
 
-namespace ZTestExtractor.Database
+namespace ZTestExtractor.Data.Database
 {
     public static class SessionFactory
     {
         private static ISessionFactory _sessionFactory;
 
         static readonly object factorylock = new object();
+
+        public static bool IsSessionPossible()
+        {
+            try
+            {
+                OpenSession();
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
+            return true;
+        }
 
         public static ISession OpenSession()
         {
@@ -32,7 +46,11 @@ namespace ZTestExtractor.Database
                        .Database(MySQLConfiguration
                             .Standard
                             .ConnectionString(connectionString))
-                       .Mappings(m => m.AutoMappings.Add(AutoMap.AssemblyOf<JiraIssue>));
+                       .Mappings(m => 
+                           m.AutoMappings
+                            .Add(AutoMap.AssemblyOf<JiraIssue>()
+                                .Where(x => x.Namespace == "ZTestExtractor.Data.EntityMappings"))
+                       );
 
                     _sessionFactory = cfg.BuildSessionFactory();
                 }
@@ -55,7 +73,7 @@ namespace ZTestExtractor.Database
             {
                 return string.Format("Server={0};Database={1};Uid={2};Pwd={3};", 
                     model.ServerName, 
-                    model.DatabaseSystem, 
+                    model.DatabaseName, 
                     model.Username, 
                     model.Password);
             }

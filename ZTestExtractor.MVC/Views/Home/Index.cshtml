@@ -1,4 +1,13 @@
-﻿<h2>Project overview</h2>
+﻿@model ZTestExtractor.MVC.Models.BaseModel
 
-<p>Welcome to ZTest Extractor! Before you do anything you must configure the database settings so that I can fetch data from your Jira/Zephy instance!</p>
-<p>Please go to the @Html.ActionLink("configuration area", "Configure", "Home", new { area = "" }) quickly!</p>
+<h2>Project overview</h2>
+
+@if (!Model.IsDatabaseConfiguredCorrectly)
+{
+    <p>Welcome to ZTest Extractor! Before you do anything you must configure the database settings so that I can fetch data from your Jira/Zephy instance!</p>
+    <p>Please go to the @Html.ActionLink("configuration area", "Configure", "Home", new { area = "" }) quickly!</p>
+}
+else
+{
+    <p>Welcome back to ZTest Extractor! I hope you last visit was as great as this will be! Let's get ready to print some new test reports!</p>
+}

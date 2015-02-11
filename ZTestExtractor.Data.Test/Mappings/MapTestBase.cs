@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ZTestExtractor.Database;
+using ZTestExtractor.Data.Database;
 
 namespace ZTestExtractor.Data.Test.Mappings
 {

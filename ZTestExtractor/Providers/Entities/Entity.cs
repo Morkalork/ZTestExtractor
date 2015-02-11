@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ZTestExtractor.Core.Interfaces.Data;
 
-namespace ZTestExtractor.Entities
+namespace ZTestExtractor.Data.Entities
 {
     public class Entity : IEntity
     {

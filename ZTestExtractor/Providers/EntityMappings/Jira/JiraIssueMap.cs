@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ZTestExtractor.Entities.Jira;
-using ZTestExtractor.Entities.Zephyr;
+using ZTestExtractor.Data.Entities.Jira;
+using ZTestExtractor.Data.Entities.Zephyr;
 
-namespace ZTestExtractor.EntityMappings.Jira
+namespace ZTestExtractor.Data.EntityMappings.Jira
 {
     public class JiraIssueMap : ClassMap<JiraIssue>
     {

@@ -5,15 +5,21 @@ using System.Web;
 using System.Web.Mvc;
 using ZTestExtractor.Business.Managers.Configurations;
 using ZTestExtractor.Core.Models.Configurations;
+using ZTestExtractor.MVC.Models;
 using ZTestExtractor.MVC.Models.Configurations;
 
 namespace ZTestExtractor.MVC.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         public ActionResult Index()
         {
-            return View();
+            var model = new BaseModel
+            {
+                IsDatabaseConfiguredCorrectly = IsDatabaseConfiguredCorrectly()
+            };
+
+            return View(model);
         }
 
         [HttpGet]
