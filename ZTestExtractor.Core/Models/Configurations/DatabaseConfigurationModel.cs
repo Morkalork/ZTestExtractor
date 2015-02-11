@@ -8,6 +8,8 @@ namespace ZTestExtractor.Core.Models.Configurations
 {
     public class DatabaseConfigurationModel
     {
+        public static readonly string FileName = "DatabaseConfiguration.json";
+
         public string ServerName { get; set; }
 
         public string DatabaseName { get; set; }

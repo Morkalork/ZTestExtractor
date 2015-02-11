@@ -16,9 +16,9 @@ namespace ZTestExtractor.Business.Test.Managers.Configurations
         [TearDown]
         public void RemoveSavedConfigurationFile()
         {
-            if(File.Exists(DatabaseConfigurationManager.FileName))
+            if (File.Exists(DatabaseConfigurationModel.FileName))
             {
-                File.Delete(DatabaseConfigurationManager.FileName);
+                File.Delete(DatabaseConfigurationModel.FileName);
             }
         }
 

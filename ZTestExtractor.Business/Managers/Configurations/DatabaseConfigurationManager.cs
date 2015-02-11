@@ -11,8 +11,6 @@ namespace ZTestExtractor.Business.Managers.Configurations
 {
     public class DatabaseConfigurationManager
     {
-        public static readonly string FileName = "DatabaseConfiguration.json";
-
         public Result Save(DatabaseConfigurationModel model)
         {
             if(model == null)
@@ -27,7 +25,7 @@ namespace ZTestExtractor.Business.Managers.Configurations
                 var fileRepository = new FileRepository();
 
                 //TODO: Perhaps this should be encrypted, could be important information :p
-                return fileRepository.SaveModelToFile(model, FileName);
+                return fileRepository.SaveModelToFile(model, DatabaseConfigurationModel.FileName);
             }
 
             return result;
@@ -36,7 +34,7 @@ namespace ZTestExtractor.Business.Managers.Configurations
         public DatabaseConfigurationModel Load()
         {
             var model = new FileRepository()
-                .LoadModelFromFile<DatabaseConfigurationModel>(FileName);
+                .LoadModelFromFile<DatabaseConfigurationModel>(DatabaseConfigurationModel.FileName);
 
             if(model == null)
             {
