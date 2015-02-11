@@ -68,11 +68,6 @@ namespace ZTestExtractor.Business.Managers.Configurations
                 result.Messages.Add("Invalid username");
             }
 
-            if (string.IsNullOrEmpty(model.Password))
-            {
-                result.Messages.Add("Invalid password");
-            }
-
             if(model.DatabaseSystem == DatabaseSystems.Unknown)
             {
                 result.Messages.Add("Invalid database system");

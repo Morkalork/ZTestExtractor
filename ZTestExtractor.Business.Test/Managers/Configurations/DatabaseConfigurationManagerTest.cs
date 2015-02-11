@@ -72,23 +72,6 @@ namespace ZTestExtractor.Business.Test.Managers.Configurations
         }
 
         [Test]
-        public void SaveReturnFalseResultOnNullPassword()
-        {
-            var manager = new DatabaseConfigurationManager();
-
-            var model = new DatabaseConfigurationModel
-            {
-                ServerName = "Foo",
-                DatabaseName = "Bar",
-                Username = "Biz"
-            };
-
-            var result = manager.Save(model);
-
-            Assert.That(result.IsSuccess, Is.False);
-        }
-
-        [Test]
         public void SaveReturnFalseResultOnUnknownDatabase()
         {
             var manager = new DatabaseConfigurationManager();
