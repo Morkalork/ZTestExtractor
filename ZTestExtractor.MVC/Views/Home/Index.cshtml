@@ -2,12 +2,13 @@
 
 <h2>Project overview</h2>
 
+<p>Welcome to ZTest Extractor! This tool will help you fetch those yummy test reports from Zephyr and let you export them as PDF documents! </p>
+
+<br />
+
 @if (!Model.IsDatabaseConfiguredCorrectly)
 {
-    <p>Welcome to ZTest Extractor! Before you do anything you must configure the database settings so that I can fetch data from your Jira/Zephy instance!</p>
+    <p class="warning">Attention!</p>
+    <p>Your database has not been setup! Before you do anything you have to establish a connection to Jira/Zephyr!</p>
     <p>Please go to the @Html.ActionLink("configuration area", "Configure", "Home", new { area = "" }) quickly!</p>
-}
-else
-{
-    <p>Welcome back to ZTest Extractor! I hope you last visit was as great as this will be! Let's get ready to print some new test reports!</p>
 }

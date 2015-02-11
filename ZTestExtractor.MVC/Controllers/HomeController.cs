@@ -47,6 +47,8 @@ namespace ZTestExtractor.MVC.Controllers
             var result = new DatabaseConfigurationManager()
                 .Save(model);
 
+            IsDatabaseConfiguredCorrectly(true);
+
             return Json(result);
         }
     }

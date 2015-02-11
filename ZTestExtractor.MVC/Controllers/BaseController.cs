@@ -10,10 +10,17 @@ namespace ZTestExtractor.MVC.Controllers
 {
     public class BaseController : Controller
     {
-        public bool IsDatabaseConfiguredCorrectly()
+        private static bool _isDatabaseConfiguredCorrectlySet = false;
+
+        public bool IsDatabaseConfiguredCorrectly(bool forceUpdate = false)
         {
-            return new DatabaseConfigurationManager()
-                .IsDatabaseConfiguredCorrectly();
+            if (!_isDatabaseConfiguredCorrectlySet || forceUpdate)
+            {
+                _isDatabaseConfiguredCorrectlySet = new DatabaseConfigurationManager()
+                    .IsDatabaseConfiguredCorrectly();
+            }
+
+            return _isDatabaseConfiguredCorrectlySet;
         }
     }
 }
