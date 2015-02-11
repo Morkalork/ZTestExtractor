@@ -5,21 +5,43 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ZTestExtractor.Core.Models.General;
 
 namespace ZTestExtractor.Repositories.System
 {
     public class FileRepository
     {
-        public void SaveModelToFile<TModel>(TModel modelToSave, string fileName)
+        public Result SaveModelToFile<TModel>(TModel modelToSave, string fileName)
         {
             if (string.IsNullOrEmpty(fileName))
             {
                 throw new ArgumentNullException("fileName");
             }
 
+            var result = new Result();
+
             string data = JsonConvert.SerializeObject(modelToSave);
 
-            File.WriteAllText(fileName, data);
+            try
+            {
+                var fullFileName = GetPath() + fileName;
+                File.WriteAllText(fullFileName, data);
+            }
+            catch(UnauthorizedAccessException)
+            {
+                result.Messages.Add("Can not save file, permission denied!");
+                return result;
+            }
+            catch(Exception)
+            {
+                result.Messages.Add("An unknown error occurred, please try again later...");
+                return result;
+            }
+
+            result.Messages.Add("Configuration successfully saved!");
+            result.IsSuccess = true;
+
+            return result;
         }
 
         public TModel LoadModelFromFile<TModel>(string fileName)
@@ -34,7 +56,7 @@ namespace ZTestExtractor.Repositories.System
 
             try
             {
-                data = File.ReadAllText(fileName);
+                data = File.ReadAllText(GetPath() + fileName);
             }
             catch (FileNotFoundException)
             {
@@ -42,6 +64,18 @@ namespace ZTestExtractor.Repositories.System
             }
 
             return JsonConvert.DeserializeObject<TModel>(data);
+        }
+
+        private string GetPath()
+        {
+            var path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ZTestExtractor\\";
+
+            if(!Directory.Exists(path))
+            {
+                Directory.CreateDirectory(path);
+            }
+
+            return path;
         }
     }
 }

@@ -30,7 +30,7 @@
                     DatabaseName: $("#database_name").val(),
                     Username: $("#username").val(),
                     Password: $("#password").val(),
-                    DatabaseSystem: $("#database_name").val()
+                    DatabaseSystem: $("#database_system").val()
                 };
 
                 saveConfiguration(model);

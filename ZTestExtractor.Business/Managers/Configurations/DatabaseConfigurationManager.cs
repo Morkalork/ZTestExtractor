@@ -27,10 +27,7 @@ namespace ZTestExtractor.Business.Managers.Configurations
                 var fileRepository = new FileRepository();
 
                 //TODO: Perhaps this should be encrypted, could be important information :p
-                fileRepository.SaveModelToFile(model, FileName);
-
-                result.Messages.Add("Successfully saved configuration!");
-                result.IsSuccess = true;
+                return fileRepository.SaveModelToFile(model, FileName);
             }
 
             return result;
