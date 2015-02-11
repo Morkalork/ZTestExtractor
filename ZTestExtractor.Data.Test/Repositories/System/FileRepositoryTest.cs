@@ -14,9 +14,36 @@ namespace ZTestExtractor.Data.Test.Repositories.System
     {
         internal class TestModel
         {
-            public string Property1 { get; set; }
+            public int Id { get; set; }
 
-            public int Property2 { get; set; }
+            public string Name { get; set; }
+
+            public override bool Equals(object obj)
+            {
+                TestModel model = obj as TestModel;
+                if(model == null)
+                {
+                    return false;
+                }
+
+                return this.Id.Equals(model.Id);
+            }
+
+            public override int GetHashCode()
+            {
+                return this.Id.GetHashCode();
+            }
+        }
+
+        private IList<string> filesSaved = new List<string>();
+
+        [TearDown]
+        public void RemoveAllCreatedFiles()
+        {
+            foreach (var file in filesSaved)
+            {
+                File.Delete(file);
+            }
         }
 
         [Test]
@@ -36,10 +63,46 @@ namespace ZTestExtractor.Data.Test.Repositories.System
             string fileName = "TestModelStorage.test";
 
             repository.SaveModelToFile(model, fileName);
+            filesSaved.Add(fileName);
 
             Assert.That(File.Exists(fileName), Is.True);
+        }
 
-            File.Delete(fileName);
+        [Test]
+        public void LoadModelFromFileThrowsOnInvalidFileName()
+        {
+            var repository = new FileRepository();
+
+            Assert.Throws<ArgumentNullException>(() => repository.LoadModelFromFile<TestModel>(null));
+        }
+
+        [Test]
+        public void LoadModelWithNoFileReturnsNull()
+        {
+            var repository = new FileRepository();
+
+            string fileName = "TestModelStorage.test";
+
+            var storedModel = repository.LoadModelFromFile<TestModel>(fileName);
+
+            Assert.That(storedModel, Is.Null);
+        }
+
+        [Test]
+        public void LoadModelReturnsCorrectModel()
+        {
+            var repository = new FileRepository();
+
+            var model = new TestModel();
+            string fileName = "TestModelStorage.test";
+
+            repository.SaveModelToFile(model, fileName);
+            filesSaved.Add(fileName);
+
+            var storedModel = repository.LoadModelFromFile<TestModel>(fileName);
+
+            Assert.That(storedModel, Is.Not.Null);
+            Assert.That(storedModel, Is.EqualTo(model));
         }
     }
 }

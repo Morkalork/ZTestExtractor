@@ -12,7 +12,7 @@ namespace ZTestExtractor.Repositories.System
     {
         public void SaveModelToFile<TModel>(TModel modelToSave, string fileName)
         {
-            if(string.IsNullOrEmpty(fileName))
+            if (string.IsNullOrEmpty(fileName))
             {
                 throw new ArgumentNullException("fileName");
             }
@@ -22,9 +22,26 @@ namespace ZTestExtractor.Repositories.System
             File.WriteAllText(fileName, data);
         }
 
-        public void LoadModelToFile<TModel>(TModel modelToLoad, string fileName)
+        public TModel LoadModelFromFile<TModel>(string fileName)
+            where TModel : class
         {
+            if (string.IsNullOrEmpty(fileName))
+            {
+                throw new ArgumentNullException("fileName");
+            }
 
+            string data = string.Empty;
+
+            try
+            {
+                data = File.ReadAllText(fileName);
+            }
+            catch (FileNotFoundException)
+            {
+                return null;
+            }
+
+            return JsonConvert.DeserializeObject<TModel>(data);
         }
     }
 }
