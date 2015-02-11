@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ZTestExtractor.Core.Models.Configurations;
-using ZTestExtractor.Data.Entities.Jira;
+using ZTestExtractor.Core.Entities.Jira;
 using ZTestExtractor.Data.Repositories.System;
 
 namespace ZTestExtractor.Data.Database

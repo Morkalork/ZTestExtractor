@@ -39,6 +39,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Entity.cs" />
+    <Compile Include="Entities\Jira\JiraIssue.cs" />
+    <Compile Include="Entities\Jira\JiraProject.cs" />
+    <Compile Include="Entities\Zephyr\TestCycle.cs" />
+    <Compile Include="Entities\Zephyr\TestSchedule.cs" />
+    <Compile Include="Entities\Zephyr\TestStatus.cs" />
+    <Compile Include="Entities\Zephyr\TestStep.cs" />
+    <Compile Include="Entities\Zephyr\TestStepResult.cs" />
     <Compile Include="Interfaces\Data\IEntity.cs" />
     <Compile Include="Interfaces\Data\IRepository.cs" />
     <Compile Include="Models\Configurations\DatabaseConfigurationModel.cs" />
