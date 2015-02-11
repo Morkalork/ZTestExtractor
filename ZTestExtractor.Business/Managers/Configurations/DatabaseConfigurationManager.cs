@@ -36,6 +36,19 @@ namespace ZTestExtractor.Business.Managers.Configurations
             return result;
         }
 
+        public DatabaseConfigurationModel Load()
+        {
+            var model = new FileRepository()
+                .LoadModelFromFile<DatabaseConfigurationModel>(FileName);
+
+            if(model == null)
+            {
+                model = new DatabaseConfigurationModel();
+            }
+
+            return model;
+        }
+
         private Result ValidateDatabaseConfigurationModel(DatabaseConfigurationModel model)
         {
             var result = new Result();

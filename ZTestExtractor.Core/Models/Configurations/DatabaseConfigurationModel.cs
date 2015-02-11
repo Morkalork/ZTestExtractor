@@ -17,5 +17,23 @@ namespace ZTestExtractor.Core.Models.Configurations
         public string Password { get; set; }
 
         public DatabaseSystems DatabaseSystem { get; set; }
+
+        public override bool Equals(object obj)
+        {
+            DatabaseConfigurationModel model = obj as DatabaseConfigurationModel;
+            if (model == null)
+            {
+                return false;
+            }
+
+            return this.ServerName.Equals(model.ServerName) 
+                && this.DatabaseName.Equals(model.DatabaseName)
+                && this.DatabaseSystem.Equals(model.DatabaseSystem);
+        }
+
+        public override int GetHashCode()
+        {
+            return (this.ServerName + this.DatabaseName + DatabaseSystem.ToString()).GetHashCode();
+        }
     }
 }

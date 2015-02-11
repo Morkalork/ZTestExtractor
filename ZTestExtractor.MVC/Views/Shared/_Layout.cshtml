@@ -8,30 +8,26 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
+    <div id="content">
+        <header class="navbar">
+            <h2>
                 @Html.ActionLink("Z Test Extractor", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
+            </h2>
+
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav clearfix">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("Configure", "Configure", "Home")</li>
                 </ul>
             </div>
+        </header>
+        <div class="container">
+            @RenderBody()
+            <hr />
+            <footer>
+                <p><a href="https://github.com/Morkalork/ZTestExtractor/">Find out more about ZTest Extractor on GitHub!</a></p>
+            </footer>
         </div>
-    </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p><a href="https://github.com/Morkalork/ZTestExtractor/">Find out more about ZTest Extractor on GitHub!</a></p>
-        </footer>
     </div>
 
     @Scripts.Render("~/bundles/jquery")

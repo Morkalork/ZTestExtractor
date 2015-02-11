@@ -124,5 +124,37 @@ namespace ZTestExtractor.Business.Test.Managers.Configurations
 
             Assert.That(result.IsSuccess, Is.True);
         }
+
+        [Test]
+        public void LoadNonExistantFileDoesNotReturnNull()
+        {
+            var manager = new DatabaseConfigurationManager();
+
+            var model = manager.Load();
+
+            Assert.That(model, Is.Not.Null);
+        }
+
+        [Test]
+        public void LoadExistingFileReturnsCorrectModel()
+        {
+            var manager = new DatabaseConfigurationManager();
+
+            var model = new DatabaseConfigurationModel
+            {
+                ServerName = "Foo",
+                DatabaseName = "Bar",
+                Username = "Biz",
+                Password = "Hemligt",
+                DatabaseSystem = DatabaseSystems.MySql
+            };
+
+            manager.Save(model);
+
+            var fetchedModel = manager.Load();
+
+            Assert.That(fetchedModel, Is.Not.Null);
+            Assert.That(fetchedModel, Is.EqualTo(model));
+        }
     }
 }

@@ -118,8 +118,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -164,6 +162,16 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ZTestExtractor.Business\ZTestExtractor.Business.csproj">
+      <Project>{18245cf0-9d73-4084-81a8-a907c62f82a8}</Project>
+      <Name>ZTestExtractor.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZTestExtractor.Core\ZTestExtractor.Core.csproj">
+      <Project>{59c4f8bc-01bf-426e-a49f-449d955ce601}</Project>
+      <Name>ZTestExtractor.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
