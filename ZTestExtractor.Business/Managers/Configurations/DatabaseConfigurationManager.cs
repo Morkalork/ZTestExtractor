@@ -5,11 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using ZTestExtractor.Core.Models.Configurations;
 using ZTestExtractor.Core.Models.General;
+using ZTestExtractor.Repositories.System;
 
 namespace ZTestExtractor.Business.Managers.Configurations
 {
     public class DatabaseConfigurationManager
     {
+        public static readonly string FileName = "DatabaseConfiguration.json";
+
         public Result Save(DatabaseConfigurationModel model)
         {
             if(model == null)
@@ -21,7 +24,13 @@ namespace ZTestExtractor.Business.Managers.Configurations
 
             if(result.Messages.Count() <= 0)
             {
+                var fileRepository = new FileRepository();
 
+                //TODO: Perhaps this should be encrypted, could be important information :p
+                fileRepository.SaveModelToFile(model, FileName);
+
+                result.Messages.Add("Successfully saved configuration!");
+                result.IsSuccess = true;
             }
 
             return result;
@@ -50,6 +59,12 @@ namespace ZTestExtractor.Business.Managers.Configurations
             {
                 result.Messages.Add("Invalid password");
             }
+
+            if(model.DatabaseSystem == DatabaseSystems.Unknown)
+            {
+                result.Messages.Add("Invalid database system");
+            }
+
             return result;
         }
     }
