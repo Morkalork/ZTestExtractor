@@ -1,0 +1,21 @@
+﻿@model ZTestExtractor.MVC.Models.Tests.TestViewModel
+
+<h2>Projects</h2>
+
+@if (Model.IsDatabaseConfiguredCorrectly)
+{
+    <p>These are the projects you have available in Jira, choose one to view its test cases!</p>
+
+    <br />
+
+    foreach(var project in Model.Projects)
+    {
+        <p>@project.Name + (@project.Key)</p>
+    }
+}
+else
+{
+    <p class="warning">No database connection!</p>
+    <p>You must configure your database in order to view your projects!</p>
+    <p>Please go to the @Html.ActionLink("configuration area", "Configure", "Home", new { area = "" }) quickly!</p>
+}

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using ZTestExtractor.Business.Managers.Jira;
+using ZTestExtractor.MVC.Models.Tests;
 
 namespace ZTestExtractor.MVC.Controllers
 {
@@ -10,7 +12,16 @@ namespace ZTestExtractor.MVC.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            var projects = new ProjectManager()
+                .GetAll();
+
+            var model = new TestViewModel
+            {
+                IsDatabaseConfiguredCorrectly = IsDatabaseConfiguredCorrectly(),
+                Projects = projects
+            };
+
+            return View(model);
         }
     }
 }
