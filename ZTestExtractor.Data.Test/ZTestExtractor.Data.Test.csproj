@@ -66,6 +66,7 @@
     <Compile Include="Repositories\Jira\JiraProjectRepositoryTest.cs" />
     <Compile Include="Repositories\RepositoryBaseTest.cs" />
     <Compile Include="Repositories\RepositoryTestBase.cs" />
+    <Compile Include="Repositories\System\FileRepositoryTest.cs" />
     <Compile Include="Repositories\Zephyr\TestCycleRepositoryTest.cs" />
     <Compile Include="Repositories\Zephyr\TestScheduleRepositoryTest.cs" />
     <Compile Include="TemporaryTestSessionFactory.cs" />

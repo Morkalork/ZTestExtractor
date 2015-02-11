@@ -43,6 +43,7 @@
     <Compile Include="Interfaces\Data\IRepository.cs" />
     <Compile Include="Models\Configurations\DatabaseConfigurationModel.cs" />
     <Compile Include="Models\Configurations\DatabaseSystems.cs" />
+    <Compile Include="Models\General\Result.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
