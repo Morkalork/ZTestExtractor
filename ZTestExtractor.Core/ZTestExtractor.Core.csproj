@@ -41,6 +41,8 @@
   <ItemGroup>
     <Compile Include="Interfaces\Data\IEntity.cs" />
     <Compile Include="Interfaces\Data\IRepository.cs" />
+    <Compile Include="Models\Configurations\DatabaseConfigurationModel.cs" />
+    <Compile Include="Models\Configurations\DatabaseSystems.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

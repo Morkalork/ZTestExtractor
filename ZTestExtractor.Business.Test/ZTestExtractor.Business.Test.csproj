@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="nunit.framework">
+      <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -39,7 +42,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Managers\Configurations\DatabaseConfigurationManagerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ZTestExtractor.Business\ZTestExtractor.Business.csproj">
+      <Project>{18245cf0-9d73-4084-81a8-a907c62f82a8}</Project>
+      <Name>ZTestExtractor.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZTestExtractor.Core\ZTestExtractor.Core.csproj">
+      <Project>{59c4f8bc-01bf-426e-a49f-449d955ce601}</Project>
+      <Name>ZTestExtractor.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZTestExtractor\Providers\ZTestExtractor.Data.csproj">
+      <Project>{9db03bf3-28d8-4088-9ba1-f5fc0b131450}</Project>
+      <Name>ZTestExtractor.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
