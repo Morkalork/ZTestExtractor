@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using ZTestExtractor.Business.Managers.Configurations;
 using ZTestExtractor.Core.Models.Configurations;
+using ZTestExtractor.MVC.Models.Configurations;
 
 namespace ZTestExtractor.MVC.Controllers
 {
@@ -18,7 +19,20 @@ namespace ZTestExtractor.MVC.Controllers
         [HttpGet]
         public ViewResult Configure()
         {
-            return View();
+            var configurationModel = new DatabaseConfigurationManager()
+                .Load();
+
+            var systems = Enum.GetValues(typeof(DatabaseSystems))
+                .Cast<DatabaseSystems>()
+                .Where(x => x != DatabaseSystems.Unknown);
+
+            var model = new ConfigurationsViewModel
+            {
+                DatabaseConfigurationModel = configurationModel,
+                DatabaseSystems = systems
+            };
+
+            return View(model);
         }
 
         [HttpPost]
@@ -27,7 +41,7 @@ namespace ZTestExtractor.MVC.Controllers
             var result = new DatabaseConfigurationManager()
                 .Save(model);
 
-            return Json(model);
+            return Json(result);
         }
     }
 }

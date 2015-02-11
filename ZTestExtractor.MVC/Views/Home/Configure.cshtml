@@ -1,5 +1,7 @@
-﻿@{
-    ViewBag.Title = "Configure";
+﻿@model ZTestExtractor.MVC.Models.Configurations.ConfigurationsViewModel
+
+@section scripts{
+    <script type="text/javascript" src="~/Scripts/Pages/Home/ConfigurationForm.js"></script>
 }
 
 <h2>Configure</h2>
@@ -11,19 +13,30 @@
     </header>
     <section>
         <p class="title">Server</p>
-        <p><input type="text" id="server_name" placeholder="The name of your database server" /></p>
+        <p><input type="text" id="server_name" value="@Model.DatabaseConfigurationModel.ServerName" placeholder="The name of your database server" $ /></p>
     </section>
     <section>
         <p class="title">Database</p>
-        <p><input type="text" id="database_name" placeholder="The name of your database" /></p>
+        <p><input type="text" id="database_name" value="@Model.DatabaseConfigurationModel.DatabaseName" placeholder="The name of your database" /></p>
     </section>
     <section>
         <p class="title">Username</p>
-        <p><input type="text" id="username" placeholder="Your database username" /></p>
+        <p><input type="text" id="username" value="@Model.DatabaseConfigurationModel.Username" placeholder="Your database username" /></p>
     </section>
     <section>
         <p class="title">Password</p>
-        <p><input type="password" id="password" placeholder="Your very secret Jira password" /></p>
+        <p><input type="password" id="password" value="@Model.DatabaseConfigurationModel.Password" placeholder="Your very secret Jira password" /></p>
+    </section>
+    <section>
+        <p class="title">Database type</p>
+        <p>
+            <select id="database_type">
+                @foreach(var system in Model.DatabaseSystems)
+                {
+                    <option value="@system.ToString()" @((Model.DatabaseConfigurationModel.DatabaseSystem == system) ? "selected" : "")>@system.ToString()</option>
+                }
+            </select>
+        </p>
     </section>
     <section>
         <p><button id="save_database_settings">Save settings</button></p>
