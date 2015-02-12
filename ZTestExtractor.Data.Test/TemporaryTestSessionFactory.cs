@@ -12,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ZTestExtractor.Core.Entities.Jira;
+using ZTestExtractor.Data.EntityMappings.Jira;
 
 namespace ZTestExtractor.Data.Test
 {
@@ -34,7 +35,7 @@ namespace ZTestExtractor.Data.Test
                 if (_sessionSource == null)
                 {
                     var persistenceModel = new PersistenceModel();
-                    persistenceModel.AddMappingsFromAssembly(typeof(JiraIssue).Assembly);
+                    persistenceModel.AddMappingsFromAssembly(typeof(JiraIssueMap).Assembly);
 
                     var sqLiteConfiguration = new SQLiteConfiguration()
                             .InMemory()

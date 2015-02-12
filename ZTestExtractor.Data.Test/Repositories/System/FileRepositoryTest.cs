@@ -40,9 +40,10 @@ namespace ZTestExtractor.Data.Test.Repositories.System
         [TearDown]
         public void RemoveAllCreatedFiles()
         {
+            var repository = new FileRepository();
             foreach (var file in filesSaved)
             {
-                File.Delete(file);
+                repository.DeleteFile(file);
             }
         }
 
@@ -52,6 +53,14 @@ namespace ZTestExtractor.Data.Test.Repositories.System
             var repository = new FileRepository();
 
             Assert.Throws<ArgumentNullException>(() => repository.SaveModelToFile(new TestModel(), null));
+        }
+
+        [Test]
+        public void DeleteFileThrowsOnInvalidFileName()
+        {
+            var repository = new FileRepository();
+
+            Assert.Throws<ArgumentNullException>(() => repository.DeleteFile(null));
         }
 
         [Test]
@@ -65,7 +74,23 @@ namespace ZTestExtractor.Data.Test.Repositories.System
             repository.SaveModelToFile(model, fileName);
             filesSaved.Add(fileName);
 
-            Assert.That(File.Exists(fileName), Is.True);
+            var path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ZTestExtractor\\";
+            Assert.That(File.Exists(path + fileName), Is.True);
+        }
+
+        [Test]
+        public void DeleteFileDeletesFile()
+        {
+            var repository = new FileRepository();
+
+            var model = new TestModel();
+            string fileName = "TestModelStorage.test";
+
+            repository.SaveModelToFile(model, fileName);
+
+            repository.DeleteFile(fileName);
+
+            Assert.That(File.Exists(fileName), Is.Not.True);
         }
 
         [Test]

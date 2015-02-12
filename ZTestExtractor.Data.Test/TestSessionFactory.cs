@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ZTestExtractor.Core.Entities.Jira;
+using ZTestExtractor.Data.EntityMappings.Jira;
 
 namespace ZTestExtractor.Data.Test
 {
@@ -24,7 +25,7 @@ namespace ZTestExtractor.Data.Test
                     .ShowSql()
                     .UsingFile("unitTest.db")
                 )
-                .Mappings(m => m.FluentMappings.AddFromAssemblyOf<JiraIssue>())
+                .Mappings(m => m.FluentMappings.AddFromAssemblyOf<JiraIssueMap>())
                 .ExposeConfiguration(BuildSchema)
                 .BuildSessionFactory();
 

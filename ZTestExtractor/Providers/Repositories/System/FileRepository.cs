@@ -66,6 +66,21 @@ namespace ZTestExtractor.Data.Repositories.System
             return JsonConvert.DeserializeObject<TModel>(data);
         }
 
+        public void DeleteFile(string fileName)
+        {
+            if (string.IsNullOrEmpty(fileName))
+            {
+                throw new ArgumentNullException("fileName");
+            }
+
+            string fullFileName = GetPath() + fileName;
+
+            if(File.Exists(fullFileName))
+            {
+                File.Delete(fullFileName);
+            }
+        }
+
         private string GetPath()
         {
             var path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ZTestExtractor\\";
