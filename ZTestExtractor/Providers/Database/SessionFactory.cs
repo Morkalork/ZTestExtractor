@@ -45,6 +45,7 @@ namespace ZTestExtractor.Data.Database
                     var cfg = Fluently.Configure()
                        .Database(MySQLConfiguration
                             .Standard
+                            .ShowSql()
                             .ConnectionString(connectionString))
                        .Mappings(m => 
                            m.AutoMappings

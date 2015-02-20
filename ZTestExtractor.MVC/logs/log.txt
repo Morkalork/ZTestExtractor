@@ -1,0 +1,49 @@
+INFO  2015-02-20 06:05:51,771   404ms Environment            lambda_method      - NHibernate 4.0.3.GA (assembly 4.0.0.4000)
+INFO  2015-02-20 06:05:51,795   428ms Environment            lambda_method      - hibernate-configuration section not found in application configuration file
+INFO  2015-02-20 06:05:51,796   429ms Environment            lambda_method      - Bytecode provider name : lcg
+INFO  2015-02-20 06:05:51,797   430ms Environment            lambda_method      - Using reflection optimizer
+INFO  2015-02-20 06:05:51,840   473ms Configuration          lambda_method      - checking mappings queue
+INFO  2015-02-20 06:05:51,841   474ms Configuration          lambda_method      - processing one-to-many association mappings
+INFO  2015-02-20 06:05:51,842   475ms Configuration          lambda_method      - processing one-to-one association property references
+INFO  2015-02-20 06:05:51,842   475ms Configuration          lambda_method      - processing foreign key constraints
+INFO  2015-02-20 06:05:51,843   476ms Configuration          lambda_method      - processing filters (second pass)
+INFO  2015-02-20 06:05:51,858   491ms Dialect                lambda_method      - Using dialect: NHibernate.Dialect.MySQLDialect
+INFO  2015-02-20 06:05:51,880   513ms Dialect                lambda_method      - Using dialect: NHibernate.Dialect.MySQLDialect
+INFO  2015-02-20 06:05:51,913   546ms eptionConverterFactory lambda_method      - Using dialect defined converter
+INFO  2015-02-20 06:05:51,915   548ms SettingsFactory        lambda_method      - Generate SQL with comments: disabled
+INFO  2015-02-20 06:05:51,916   549ms nectionProviderFactory lambda_method      - Initializing connection provider: NHibernate.Connection.DriverConnectionProvider
+INFO  2015-02-20 06:05:51,917   550ms ConnectionProvider     lambda_method      - Configuring ConnectionProvider
+INFO  2015-02-20 06:05:52,262   896ms SettingsFactory        lambda_method      - Transaction factory: NHibernate.Transaction.AdoNetWithDistributedTransactionFactory
+INFO  2015-02-20 06:05:52,264   898ms SettingsFactory        lambda_method      - Optimize cache for minimal puts: False
+INFO  2015-02-20 06:05:52,265   899ms SettingsFactory        lambda_method      - Connection release mode: auto
+INFO  2015-02-20 06:05:52,266   900ms SettingsFactory        lambda_method      - Default batch fetch size: 1
+INFO  2015-02-20 06:05:52,268   902ms SettingsFactory        lambda_method      - echoing all SQL to stdout
+INFO  2015-02-20 06:05:52,269   903ms SettingsFactory        lambda_method      - Statistics: disabled
+INFO  2015-02-20 06:05:52,270   904ms SettingsFactory        lambda_method      - Deleted entity synthetic identifier rollback: disabled
+INFO  2015-02-20 06:05:52,271   905ms SettingsFactory        lambda_method      - Query translator: NHibernate.Hql.Ast.ANTLR.ASTQueryTranslatorFactory
+INFO  2015-02-20 06:05:52,274   908ms SettingsFactory        lambda_method      - Query language substitutions: {}
+INFO  2015-02-20 06:05:52,278   912ms SettingsFactory        lambda_method      - cache provider: NHibernate.Cache.NoCacheProvider, NHibernate, Version=4.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4
+INFO  2015-02-20 06:05:52,280   913ms SettingsFactory        lambda_method      - Order SQL inserts for batching: disabled
+DEBUG 2015-02-20 06:05:52,282   915ms SettingsFactory        lambda_method      - Wrap result sets: disabled
+INFO  2015-02-20 06:05:52,284   917ms SettingsFactory        lambda_method      - Batcher factory: NHibernate.AdoNet.NonBatchingBatcherFactory, NHibernate, Version=4.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4
+INFO  2015-02-20 06:05:52,286   919ms SettingsFactory        lambda_method      - Default entity-mode: Poco
+INFO  2015-02-20 06:05:52,288   921ms SettingsFactory        lambda_method      - Named query checking : enabled
+INFO  2015-02-20 06:05:52,289   922ms SettingsFactory        lambda_method      - Ignoring exceptions in BeforeTransactionCompletion : disabled
+INFO  2015-02-20 06:05:52,304   937ms SessionFactoryImpl     lambda_method      - building session factory
+DEBUG 2015-02-20 06:05:52,306   939ms SessionFactoryImpl     lambda_method      - Session factory constructed with filter configurations : {}
+DEBUG 2015-02-20 06:05:52,307   940ms SessionFactoryImpl     lambda_method      - instantiating session factory with properties: {'use_reflection_optimizer'='True', 'connection.provider'='NHibernate.Connection.DriverConnectionProvider', 'connection.driver_class'='NHibernate.Driver.MySqlDataDriver, NHibernate, Version=4.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4', 'dialect'='NHibernate.Dialect.MySQLDialect, NHibernate, Version=4.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4', 'hibernate.dialect'='NHibernate.Dialect.MySQLDialect, NHibernate, Version=4.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4', 'show_sql'='true', 'connection.connection_string'='Server=localhost;Database=jira;Uid=root;Pwd=;'}
+DEBUG 2015-02-20 06:05:52,309   942ms iverConnectionProvider lambda_method      - Obtaining IDbConnection from Driver
+DEBUG 2015-02-20 06:05:52,435  1068ms ConnectionProvider     lambda_method      - Closing connection
+DEBUG 2015-02-20 06:05:52,439  1072ms onFactoryObjectFactory lambda_method      - initializing class SessionFactoryObjectFactory
+DEBUG 2015-02-20 06:05:52,440  1073ms onFactoryObjectFactory lambda_method      - registered: cb7a4e5671e44e83bfec7beb64cd762a(unnamed)
+INFO  2015-02-20 06:05:52,441  1074ms onFactoryObjectFactory lambda_method      - no name configured
+DEBUG 2015-02-20 06:05:52,441  1074ms SessionFactoryImpl     lambda_method      - Instantiated session factory
+DEBUG 2015-02-20 06:05:52,444  1077ms SessionFactoryImpl     lambda_method      - Checking 0 named HQL queries
+DEBUG 2015-02-20 06:05:52,445  1078ms SessionFactoryImpl     lambda_method      - Checking 0 named SQL queries
+DEBUG 2015-02-20 06:05:52,456  1089ms SessionImpl            lambda_method      - [session-id=085b141e-86c0-4e67-8da9-c2b57c8aa9e2] opened session at timestamp: 635600091524, for session factory: [/cb7a4e5671e44e83bfec7beb64cd762a]
+DEBUG 2015-02-20 06:05:52,884  1518ms SessionImpl            lambda_method      - [session-id=085b141e-86c0-4e67-8da9-c2b57c8aa9e2] executing real Dispose(False)
+DEBUG 2015-02-20 06:05:56,178  4812ms SessionImpl            lambda_method      - [session-id=a400be48-2306-4adf-8cf0-846e3ebfbaa9] opened session at timestamp: 635600091561, for session factory: [/cb7a4e5671e44e83bfec7beb64cd762a]
+DEBUG 2015-02-20 06:05:56,190  4824ms ConnectionManager      lambda_method      - after autocommit
+DEBUG 2015-02-20 06:05:56,192  4826ms SessionImpl            lambda_method      - transaction completion
+DEBUG 2015-02-20 06:05:56,193  4827ms ConnectionManager      lambda_method      - aggressively releasing database connection
+INFO  2015-02-20 06:05:56,195  4829ms Logger                 Info               - Found some models...

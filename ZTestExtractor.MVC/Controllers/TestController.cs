@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using ZTestExtractor.Business.Managers.Jira;
+using ZTestExtractor.Core.Logging;
 using ZTestExtractor.MVC.Models.Tests;
 
 namespace ZTestExtractor.MVC.Controllers
