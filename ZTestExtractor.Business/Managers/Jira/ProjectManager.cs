@@ -13,10 +13,13 @@ namespace ZTestExtractor.Business.Managers.Jira
     {
         public IEnumerable<JiraProject> GetAll()
         {
-            //TODO: Ioc!
-            var session = SessionFactory.OpenSession();
-            return new JiraProjectRepository(session)
-                .GetAll();
+            using (var session = SessionFactory.OpenSession())
+            {
+                var projects = new JiraProjectRepository(session)
+                    .GetAll();
+
+                return projects;
+            }
         }
     }
 }

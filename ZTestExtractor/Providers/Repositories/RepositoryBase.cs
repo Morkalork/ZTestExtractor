@@ -19,7 +19,7 @@ namespace ZTestExtractor.Data.Repositories
             Session = session;
         }
 
-        public TEntity GetById(int id)
+        public virtual TEntity GetById(int id)
         {
             using(var transaction = Session.BeginTransaction())
             {
@@ -30,7 +30,7 @@ namespace ZTestExtractor.Data.Repositories
             }
         }
 
-        public IEnumerable<TEntity> GetAll()
+        public virtual IEnumerable<TEntity> GetAll()
         {
             return Session
                 .CreateCriteria<TEntity>()

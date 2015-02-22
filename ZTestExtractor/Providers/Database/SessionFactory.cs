@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using ZTestExtractor.Core.Models.Configurations;
 using ZTestExtractor.Core.Entities.Jira;
 using ZTestExtractor.Data.Repositories.System;
+using ZTestExtractor.Core.Entities;
 
 namespace ZTestExtractor.Data.Database
 {
@@ -45,12 +46,9 @@ namespace ZTestExtractor.Data.Database
                     var cfg = Fluently.Configure()
                        .Database(MySQLConfiguration
                             .Standard
-                            .ShowSql()
                             .ConnectionString(connectionString))
                        .Mappings(m => 
-                           m.AutoMappings
-                            .Add(AutoMap.AssemblyOf<JiraIssue>()
-                                .Where(x => x.Namespace == "ZTestExtractor.Data.EntityMappings"))
+                           m.FluentMappings.AddFromAssemblyOf<Entity>()
                        );
 
                     _sessionFactory = cfg.BuildSessionFactory();
