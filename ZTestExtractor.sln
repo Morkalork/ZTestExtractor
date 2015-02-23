@@ -5,7 +5,7 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Providers", "Providers", "{E7EB7663-EBE8-4CAE-817E-988F5F214DA6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZTestExtractor.Data", "ZTestExtractor\Providers\ZTestExtractor.Data.csproj", "{9DB03BF3-28D8-4088-9BA1-F5FC0B131450}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZTestExtractor.Data", "ZTestExtractor.Data\Providers\ZTestExtractor.Data.csproj", "{9DB03BF3-28D8-4088-9BA1-F5FC0B131450}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZTestExtractor.Data.Test", "ZTestExtractor.Data.Test\ZTestExtractor.Data.Test.csproj", "{6AE72E3B-30DE-40A8-8A31-3166988E723C}"
 EndProject
@@ -18,6 +18,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZTestExtractor.Business", "ZTestExtractor.Business\ZTestExtractor.Business.csproj", "{18245CF0-9D73-4084-81A8-A907C62F82A8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZTestExtractor.Business.Test", "ZTestExtractor.Business.Test\ZTestExtractor.Business.Test.csproj", "{2FD16FE2-F63D-4A9C-B893-BC854153A927}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZTestExtractor.Console", "ZTestExtractor.Console\ZTestExtractor.Console.csproj", "{2F9EDD77-ED76-4E26-B075-B6208D97BBEF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,6 +51,10 @@ Global
 		{2FD16FE2-F63D-4A9C-B893-BC854153A927}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2FD16FE2-F63D-4A9C-B893-BC854153A927}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2FD16FE2-F63D-4A9C-B893-BC854153A927}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F9EDD77-ED76-4E26-B075-B6208D97BBEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F9EDD77-ED76-4E26-B075-B6208D97BBEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F9EDD77-ED76-4E26-B075-B6208D97BBEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F9EDD77-ED76-4E26-B075-B6208D97BBEF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -60,5 +66,6 @@ Global
 		{6B13016C-7B02-4C1F-AF82-12113B29E10F} = {69FFCEBC-6D16-4620-8CC5-62B1054C7DA1}
 		{18245CF0-9D73-4084-81A8-A907C62F82A8} = {E7EB7663-EBE8-4CAE-817E-988F5F214DA6}
 		{2FD16FE2-F63D-4A9C-B893-BC854153A927} = {E7EB7663-EBE8-4CAE-817E-988F5F214DA6}
+		{2F9EDD77-ED76-4E26-B075-B6208D97BBEF} = {69FFCEBC-6D16-4620-8CC5-62B1054C7DA1}
 	EndGlobalSection
 EndGlobal

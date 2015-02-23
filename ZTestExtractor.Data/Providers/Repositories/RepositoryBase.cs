@@ -33,8 +33,8 @@ namespace ZTestExtractor.Data.Repositories
         public virtual IEnumerable<TEntity> GetAll()
         {
             return Session
-                .CreateCriteria<TEntity>()
-                .List<TEntity>();
+                .QueryOver<TEntity>()
+                .List();
         }
     }
 }

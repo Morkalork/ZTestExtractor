@@ -25,7 +25,9 @@ namespace ZTestExtractor.Data.Database
         {
             try
             {
-                OpenSession();
+                var session = OpenSession();
+
+                session.Close();
             }
             catch (Exception)
             {
@@ -46,9 +48,10 @@ namespace ZTestExtractor.Data.Database
                     var cfg = Fluently.Configure()
                        .Database(MySQLConfiguration
                             .Standard
+                            .ShowSql()
                             .ConnectionString(connectionString))
                        .Mappings(m => 
-                           m.FluentMappings.AddFromAssemblyOf<Entity>()
+                           m.FluentMappings.AddFromAssemblyOf<JiraProject>()
                        );
 
                     _sessionFactory = cfg.BuildSessionFactory();

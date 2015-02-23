@@ -23,7 +23,7 @@ namespace ZTestExtractor.Data.EntityMappings.Zephyr
             Map(x => x.ExpectedResult, "RESULT");
 
             References<JiraIssue>(x => x.Issue)
-                .ForeignKey("ISSUE_ID")
+                .Column("ID")
                 .Not.Nullable();
         }
     }

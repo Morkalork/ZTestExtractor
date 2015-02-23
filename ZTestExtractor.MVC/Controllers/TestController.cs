@@ -13,7 +13,7 @@ namespace ZTestExtractor.MVC.Controllers
     {
         public ActionResult Index()
         {
-            var projects = new ProjectManager()
+            var projects = new JiraProjectManager()
                 .GetAll();
 
             var model = new TestViewModel

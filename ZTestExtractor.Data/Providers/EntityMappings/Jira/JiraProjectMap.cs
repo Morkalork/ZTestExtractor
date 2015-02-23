@@ -8,9 +8,9 @@ using ZTestExtractor.Core.Entities.Jira;
 
 namespace ZTestExtractor.Data.EntityMappings.Jira
 {
-    public class ProjectMap : ClassMap<JiraProject>
+    public class JiraProjectMap : ClassMap<JiraProject>
     {
-        public ProjectMap()
+        public JiraProjectMap()
         {
             Table("project");
 
@@ -20,7 +20,7 @@ namespace ZTestExtractor.Data.EntityMappings.Jira
             Map(x => x.Name, "pname");
 
             HasMany<JiraIssue>(x => x.Issues)
-                .KeyColumn("PROJECT_ID")
+                .KeyColumn("ID")
                 .Inverse()
                 .Not.LazyLoad();
         }

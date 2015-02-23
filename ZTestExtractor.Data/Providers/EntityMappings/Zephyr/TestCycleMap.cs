@@ -7,28 +7,28 @@ using System.Threading.Tasks;
 using ZTestExtractor.Core.Entities.Jira;
 using ZTestExtractor.Core.Entities.Zephyr;
 
-namespace ZTestExtractor.Data.EntityMappings.Jira
+namespace ZTestExtractor.Data.EntityMappings.Zephyr
 {
-    public class JiraIssueMap : ClassMap<JiraIssue>
+    public class TestCycleMap : ClassMap<TestCycle>
     {
-        public JiraIssueMap()
+        public TestCycleMap()
         {
-            Table("jiraissue");
+            Table("ao_7deabf_cycle");
 
             Id(x => x.Id, "ID");
 
-            Map(x => x.CreatedBy, "CREATOR");
+            Map(x => x.CreatedBy, "CREATED_BY");
             Map(x => x.Description, "DESCRIPTION");
-            Map(x => x.Summary, "SUMMARY");
+            Map(x => x.Name, "NAME");
 
             References<JiraProject>(x => x.Project)
-                .ForeignKey("PROJECT")
+                .Column("ID")
                 .Not.Nullable();
 
-            HasMany<TestStep>(x => x.TestSteps)
+            HasMany<TestSchedule>(x => x.Schedules)
+                .KeyColumn("ID")
                 .Inverse()
-                .Cascade.AllDeleteOrphan()
-                .AsSet(); //All isues are unique
+                .Not.LazyLoad();
         }
     }
 }

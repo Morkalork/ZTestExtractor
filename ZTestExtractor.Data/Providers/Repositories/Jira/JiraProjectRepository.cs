@@ -13,5 +13,14 @@ namespace ZTestExtractor.Data.Repositories.Jira
     {
         public JiraProjectRepository(ISession session) : base(session)
         { }
+
+        public IEnumerable<JiraProject> GetKludd()
+        {
+            var result = Session
+                .CreateCriteria<JiraProject>()
+                .List();
+
+            return null;
+        }
     }
 }

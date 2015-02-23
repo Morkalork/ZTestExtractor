@@ -24,15 +24,15 @@ namespace ZTestExtractor.Data.EntityMappings.Zephyr
             Map(x => x.Status, "STATUS");
 
             References<JiraProject>(x => x.Project)
-                .ForeignKey("PROJECT_ID")
+                .Column("ID")
                 .Not.Nullable();
 
             References<TestStep>(x => x.Step)
-                .ForeignKey("STEP_ID")
+                .Column("ID")
                 .Not.Nullable();
 
             References<TestSchedule>(x => x.Schedule)
-                .ForeignKey("SCHEDULE_ID")
+                .Column("ID")
                 .Not.Nullable();
         }
     }
