@@ -6,6 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ZTestExtractor.Core.Interfaces.Data;
+using NHibernate.FlowQuery;
+using NHibernate.FlowQuery.Core;
 
 namespace ZTestExtractor.Data.Repositories
 {
@@ -13,6 +15,14 @@ namespace ZTestExtractor.Data.Repositories
         where TEntity : class, IEntity
     {
         public ISession Session { get; private set; }
+
+        public IImmediateFlowQuery<TEntity> Query
+        {
+            get
+            {
+                return Session.FlowQuery<TEntity>();
+            }
+        }
 
         public RepositoryBase(ISession session)
         {

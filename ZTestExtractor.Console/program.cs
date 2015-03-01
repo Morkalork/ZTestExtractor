@@ -16,19 +16,7 @@ namespace ZTestExtractor.Console
             Logger.Configure();
 
             var projects = new JiraProjectManager()
-                .GetAll();
-
-            if (projects != null)
-            {
-                foreach (var project in projects)
-                {
-                    output.WriteLine(project.Key);
-                }
-            }
-
-            projects = new JiraProjectManager()
-                .GetKludd();
-
+                .GetAllDisplayModels();
 
             if (projects != null)
             {

@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using ZTestExtractor.Data.Entities.Jira;
+using ZTestExtractor.Models.Jira;
 
 namespace ZTestExtractor.MVC.Models.Tests
 {
     public class TestViewModel : BaseModel
     {
-        public IEnumerable<JiraProject> Projects { get; set; }
+        public IEnumerable<JiraProjectDisplayModel> Projects { get; set; }
     }
 }

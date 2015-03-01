@@ -188,9 +188,9 @@
       <Project>{59c4f8bc-01bf-426e-a49f-449d955ce601}</Project>
       <Name>ZTestExtractor.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ZTestExtractor.Data\Providers\ZTestExtractor.Data.csproj">
-      <Project>{9db03bf3-28d8-4088-9ba1-f5fc0b131450}</Project>
-      <Name>ZTestExtractor.Data</Name>
+    <ProjectReference Include="..\ZTestExtractor.Models\ZTestExtractor.Models.csproj">
+      <Project>{633369a9-04df-4155-a4de-e8865f8ca7f4}</Project>
+      <Name>ZTestExtractor.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

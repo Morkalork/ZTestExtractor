@@ -50,8 +50,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\NHibernate.4.0.3.4000\lib\net40\NHibernate.dll</HintPath>
     </Reference>
-    <Reference Include="NHibernate.FlowQuery">
-      <HintPath>..\..\packages\NHibernate.FlowQuery.2.2.0\lib\Net40\NHibernate.FlowQuery.dll</HintPath>
+    <Reference Include="NHibernate.FlowQuery, Version=2.3.5367.42625, Culture=neutral, PublicKeyToken=effac5250cfac14f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\NHibernate.FlowQuery.2.3.0\lib\Net40\NHibernate.FlowQuery.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -91,6 +92,10 @@
     <ProjectReference Include="..\..\ZTestExtractor.Core\ZTestExtractor.Core.csproj">
       <Project>{59c4f8bc-01bf-426e-a49f-449d955ce601}</Project>
       <Name>ZTestExtractor.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ZTestExtractor.Models\ZTestExtractor.Models.csproj">
+      <Project>{633369a9-04df-4155-a4de-e8865f8ca7f4}</Project>
+      <Name>ZTestExtractor.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

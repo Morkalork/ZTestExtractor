@@ -11,18 +11,5 @@ namespace ZTestExtractor.Business.Managers.Jira
 {
     public class JiraIssueManager
     {
-        public IEnumerable<JiraIssue> GetAll()
-        {
-            using (var session = SessionFactory.OpenSession())
-            {
-                var issues = new JiraIssueRepository(session)
-                    .GetAll();
-
-                var issues2 = new JiraIssueRepository(session)
-                    .GetPlentyOfThem();
-
-                return issues;
-            }
-        }
     }
 }
