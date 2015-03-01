@@ -188,6 +188,10 @@
       <Project>{59c4f8bc-01bf-426e-a49f-449d955ce601}</Project>
       <Name>ZTestExtractor.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ZTestExtractor.Data\Providers\ZTestExtractor.Data.csproj">
+      <Project>{9db03bf3-28d8-4088-9ba1-f5fc0b131450}</Project>
+      <Name>ZTestExtractor.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -5,8 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ZTestExtractor.Core.Entities.Jira;
-using ZTestExtractor.Core.Entities.Zephyr;
+using ZTestExtractor.Data.Entities.Jira;
+using ZTestExtractor.Data.Entities.Zephyr;
 
 namespace ZTestExtractor.Data.Test.Mappings.Zephyr
 {

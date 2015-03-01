@@ -9,9 +9,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ZTestExtractor.Core.Models.Configurations;
-using ZTestExtractor.Core.Entities.Jira;
+using ZTestExtractor.Data.Entities.Jira;
 using ZTestExtractor.Data.Repositories.System;
-using ZTestExtractor.Core.Entities;
+using ZTestExtractor.Data.Entities;
 
 namespace ZTestExtractor.Data.Database
 {
@@ -49,6 +49,8 @@ namespace ZTestExtractor.Data.Database
                        .Database(MySQLConfiguration
                             .Standard
                             .ShowSql()
+                            .AdoNetBatchSize(0)
+                            .FormatSql()
                             .ConnectionString(connectionString))
                        .Mappings(m => 
                            m.FluentMappings.AddFromAssemblyOf<JiraProject>()

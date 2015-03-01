@@ -26,14 +26,15 @@ namespace ZTestExtractor.Console
                 }
             }
 
-            var issues = new JiraIssueManager()
-                .GetAll();
+            projects = new JiraProjectManager()
+                .GetKludd();
 
-            if (issues != null)
+
+            if (projects != null)
             {
-                foreach (var issue in issues)
+                foreach (var project in projects)
                 {
-                    output.WriteLine(issue.Description);
+                    output.WriteLine(project.Key);
                 }
             }
 

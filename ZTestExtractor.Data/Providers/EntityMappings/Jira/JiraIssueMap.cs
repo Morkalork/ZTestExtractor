@@ -4,8 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ZTestExtractor.Core.Entities.Jira;
-using ZTestExtractor.Core.Entities.Zephyr;
+using ZTestExtractor.Data.Entities.Jira;
+using ZTestExtractor.Data.Entities.Zephyr;
 
 namespace ZTestExtractor.Data.EntityMappings.Jira
 {
@@ -28,8 +28,7 @@ namespace ZTestExtractor.Data.EntityMappings.Jira
             HasMany<TestStep>(x => x.TestSteps)
                 .KeyColumn("ID")
                 .Inverse()
-                .Cascade.AllDeleteOrphan()
-                .AsSet(); //All isues are unique
+                .Cascade.AllDeleteOrphan();
         }
     }
 }

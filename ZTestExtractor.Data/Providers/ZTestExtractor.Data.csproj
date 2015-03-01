@@ -50,6 +50,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\NHibernate.4.0.3.4000\lib\net40\NHibernate.dll</HintPath>
     </Reference>
+    <Reference Include="NHibernate.FlowQuery">
+      <HintPath>..\..\packages\NHibernate.FlowQuery.2.2.0\lib\Net40\NHibernate.FlowQuery.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -61,6 +64,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Database\SessionFactory.cs" />
+    <Compile Include="Entities\Entity.cs" />
+    <Compile Include="Entities\Jira\JiraIssue.cs" />
+    <Compile Include="Entities\Jira\JiraProject.cs" />
+    <Compile Include="Entities\Zephyr\TestCycle.cs" />
+    <Compile Include="Entities\Zephyr\TestSchedule.cs" />
+    <Compile Include="Entities\Zephyr\TestStatus.cs" />
+    <Compile Include="Entities\Zephyr\TestStep.cs" />
+    <Compile Include="Entities\Zephyr\TestStepResult.cs" />
     <Compile Include="EntityMappings\Jira\JiraIssueMap.cs" />
     <Compile Include="EntityMappings\Jira\JiraProjectMap.cs" />
     <Compile Include="EntityMappings\Zephyr\TestCycleMap.cs" />

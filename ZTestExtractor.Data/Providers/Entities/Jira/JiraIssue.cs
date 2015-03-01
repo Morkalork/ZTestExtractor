@@ -3,36 +3,37 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ZTestExtractor.Core.Entities.Jira;
+using ZTestExtractor.Data.Entities.Zephyr;
 
-namespace ZTestExtractor.Core.Entities.Zephyr
+namespace ZTestExtractor.Data.Entities.Jira
 {
-    public class TestCycle : Entity
+    public class JiraIssue : Entity
     {
-        public TestCycle()
+        public JiraIssue()
         {
-            Schedules = new List<TestSchedule>();
+            TestSteps = new List<TestStep>();
         }
-        public virtual string Description { get; set; }
 
         public virtual string CreatedBy { get; set; }
 
-        public virtual string Name { get; set; }
+        public virtual string Description { get; set; }
+
+        public virtual string Summary { get; set; }
 
         public virtual JiraProject Project { get; set; }
 
-        public virtual IList<TestSchedule> Schedules { get; set; }
+        public virtual IList<TestStep> TestSteps { get; set; }
 
         public override bool Equals(object obj)
         {
-            var testCycle = obj as TestCycle;
+            var issue = obj as JiraIssue;
 
-            if (testCycle == null)
+            if (issue == null)
             {
                 return false;
             }
 
-            return this.Id.Equals(testCycle.Id);
+            return this.Id.Equals(issue.Id);
         }
 
         public override int GetHashCode()

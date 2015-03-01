@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ZTestExtractor.Core.Entities.Jira;
+using ZTestExtractor.Data.Entities.Jira;
 
-namespace ZTestExtractor.Core.Entities.Zephyr
+namespace ZTestExtractor.Data.Entities.Zephyr
 {
     public class TestStep : Entity
     {

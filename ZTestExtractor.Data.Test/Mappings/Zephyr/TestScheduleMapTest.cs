@@ -5,8 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ZTestExtractor.Core.Entities.Jira;
-using ZTestExtractor.Core.Entities.Zephyr;
+using ZTestExtractor.Data.Entities.Jira;
+using ZTestExtractor.Data.Entities.Zephyr;
 
 namespace ZTestExtractor.Data.Test.Mappings.Zephyr
 {
@@ -46,7 +46,7 @@ namespace ZTestExtractor.Data.Test.Mappings.Zephyr
                     .CheckProperty(p => p.Comment, "Hello World!")
                     .CheckProperty(p => p.ExecutedBy, "Jim")
                     .CheckProperty(p => p.Order, 1)
-                    .CheckProperty(p => p.Status, ZTestExtractor.Core.Entities.Zephyr.TestStatus.Pass)
+                    .CheckProperty(p => p.Status, ZTestExtractor.Data.Entities.Zephyr.TestStatus.Pass)
                     .CheckReference(p => p.Project, project)
                     .CheckReference(p => p.Issue, issue)
                     .CheckReference(p => p.Cycle, cycle)

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using ZTestExtractor.Core.Entities.Jira;
+using ZTestExtractor.Data.Entities.Jira;
 
 namespace ZTestExtractor.MVC.Models.Tests
 {
