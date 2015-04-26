@@ -80,6 +80,7 @@
     <Compile Include="EntityMappings\Zephyr\TestStepMap.cs" />
     <Compile Include="EntityMappings\Zephyr\TestStepResultMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\Jira\IJiraProjectRepository.cs" />
     <Compile Include="Repositories\Jira\JiraIssueRepository.cs" />
     <Compile Include="Repositories\Jira\JiraProjectRepository.cs" />
     <Compile Include="Repositories\RepositoryBase.cs" />

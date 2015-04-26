@@ -11,7 +11,7 @@ using NHibernate.FlowQuery;
 
 namespace ZTestExtractor.Data.Repositories.Jira
 {
-    public class JiraProjectRepository : RepositoryBase<JiraProject>
+    public class JiraProjectRepository : RepositoryBase<JiraProject>, IJiraProjectRepository
     {
         public JiraProjectRepository(ISession session) : base(session)
         { }

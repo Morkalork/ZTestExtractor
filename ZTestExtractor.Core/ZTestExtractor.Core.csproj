@@ -43,7 +43,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Interfaces\Data\IEntity.cs" />
-    <Compile Include="Interfaces\Data\IRepository.cs" />
+    <Compile Include="Interfaces\Data\IRepository^1.cs" />
+    <Compile Include="Logging\ISystemLog.cs" />
     <Compile Include="Logging\Logger.cs" />
     <Compile Include="Models\Configurations\DatabaseConfigurationModel.cs" />
     <Compile Include="Models\Configurations\DatabaseSystems.cs" />

@@ -10,15 +10,13 @@ using ZTestExtractor.Models.Jira;
 
 namespace ZTestExtractor.Business.Managers.Jira
 {
-    public class JiraProjectManager
+    public class JiraProjectManager : BaseManager
     {
         public IEnumerable<JiraProjectDisplayModel> GetAllDisplayModels()
         {
-            using (var session = SessionFactory.OpenSession())
-            {
-                return new JiraProjectRepository(session)
-                    .GetAllDisplayModels();
-            }
+            var repository = GetRepository<JiraProjectRepository>();
+            return repository
+                .GetAllDisplayModels();
         }
     }
 }

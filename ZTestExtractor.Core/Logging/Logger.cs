@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ZTestExtractor.Core.Logging
 {
-    public class Logger
+    public class Logger : ISystemLog
     {
         private log4net.ILog Log { get; set; }
 
@@ -38,6 +38,11 @@ namespace ZTestExtractor.Core.Logging
         public void Info(object msg)
         {
             Log.Info(msg);
+        }
+
+        public void Warn(object msg)
+        {
+            Log.Warn(msg);
         }
     }
 }
