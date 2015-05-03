@@ -1,10 +1,10 @@
 ﻿@model ZTestExtractor.MVC.Models.Tests.TestViewModel
 
-<h2>Projects</h2>
+<h2>@TestResource.Projects</h2>
 
 @if (Model.IsDatabaseConfiguredCorrectly)
 {
-    <p>These are the projects you have available in Jira, choose one to view its test cases!</p>
+    <p>@TestResource.ChooseAProject</p>
 
     <br />
 
@@ -14,12 +14,17 @@
             <option value="@project.Id">@project.Name (@project.Key)</option>
         }
     </select>
-
-    
 }
 else
-{
-    <p class="warning">No database connection!</p>
-    <p>You must configure your database in order to view your projects!</p>
-    <p>Please go to the @Html.ActionLink("configuration area", "Configure", "Home", new { area = "" }) quickly!</p>
+{   
+    <p class="warning">@TestResource.NoDatabaseConnection</p>
+    <p>@TestResource.YouMustConfigureYourDatabase</p>
+    
+    <p>
+        @Html.Raw(
+            TestResource.PleaseGoToConfiguration.F(
+                Html.ActionLink("configuration area", "Configure", "Home", new { area = "" })
+            )
+        )
+    </p>
 }

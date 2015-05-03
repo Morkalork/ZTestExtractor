@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZTestExtractor.Console", "Z
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZTestExtractor.Models", "ZTestExtractor.Models\ZTestExtractor.Models.csproj", "{633369A9-04DF-4155-A4DE-E8865F8CA7F4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZTestExtractor.Resources", "ZTestExtractor.Resources\ZTestExtractor.Resources.csproj", "{5945672D-5AD7-480C-B4E7-04F9121F9C8A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -61,6 +63,10 @@ Global
 		{633369A9-04DF-4155-A4DE-E8865F8CA7F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{633369A9-04DF-4155-A4DE-E8865F8CA7F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{633369A9-04DF-4155-A4DE-E8865F8CA7F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5945672D-5AD7-480C-B4E7-04F9121F9C8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5945672D-5AD7-480C-B4E7-04F9121F9C8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5945672D-5AD7-480C-B4E7-04F9121F9C8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5945672D-5AD7-480C-B4E7-04F9121F9C8A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -74,5 +80,6 @@ Global
 		{2FD16FE2-F63D-4A9C-B893-BC854153A927} = {E7EB7663-EBE8-4CAE-817E-988F5F214DA6}
 		{2F9EDD77-ED76-4E26-B075-B6208D97BBEF} = {69FFCEBC-6D16-4620-8CC5-62B1054C7DA1}
 		{633369A9-04DF-4155-A4DE-E8865F8CA7F4} = {E7EB7663-EBE8-4CAE-817E-988F5F214DA6}
+		{5945672D-5AD7-480C-B4E7-04F9121F9C8A} = {E7EB7663-EBE8-4CAE-817E-988F5F214DA6}
 	EndGlobalSection
 EndGlobal

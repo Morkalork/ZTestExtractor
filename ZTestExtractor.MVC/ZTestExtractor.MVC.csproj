@@ -164,7 +164,9 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Views\Web.config" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -191,6 +193,10 @@
     <ProjectReference Include="..\ZTestExtractor.Models\ZTestExtractor.Models.csproj">
       <Project>{633369a9-04df-4155-a4de-e8865f8ca7f4}</Project>
       <Name>ZTestExtractor.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZTestExtractor.Resources\ZTestExtractor.Resources.csproj">
+      <Project>{5945672d-5ad7-480c-b4e7-04f9121f9c8a}</Project>
+      <Name>ZTestExtractor.Resources</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
