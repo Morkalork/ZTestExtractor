@@ -19,6 +19,7 @@ namespace ZTestExtractor.Data.Repositories.Jira
         public IEnumerable<JiraProjectDisplayModel> GetAllDisplayModels()
         {
             var result = Query
+                .OrderBy(x => x.Name)
                 .Select(x => new JiraProjectDisplayModel()
                 {
                     Id = x.Id,

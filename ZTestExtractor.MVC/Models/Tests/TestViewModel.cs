@@ -9,5 +9,7 @@ namespace ZTestExtractor.MVC.Models.Tests
     public class TestViewModel : BaseModel
     {
         public IEnumerable<JiraProjectDisplayModel> Projects { get; set; }
+
+        public JiraProjectDisplayModel SelectedProject { get; set; }
     }
 }

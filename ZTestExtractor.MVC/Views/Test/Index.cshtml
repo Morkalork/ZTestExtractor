@@ -8,10 +8,14 @@
 
     <br />
 
-    foreach(var project in Model.Projects)
-    {
-        <p>@project.Name + (@project.Key)</p>
-    }
+    <select id="project">
+        @foreach(var project in Model.Projects)
+        {
+            <option value="@project.Id">@project.Name (@project.Key)</option>
+        }
+    </select>
+
+    
 }
 else
 {
