@@ -130,6 +130,9 @@
   <data name="Projects" xml:space="preserve">
     <value>Projects</value>
   </data>
+  <data name="SelectProject" xml:space="preserve">
+    <value>Select project</value>
+  </data>
   <data name="YouMustConfigureYourDatabase" xml:space="preserve">
     <value>You must configure your database in order to view your projects!</value>
   </data>

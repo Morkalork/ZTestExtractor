@@ -64,3 +64,8 @@ footer
     font-weight: bold;
     text-decoration: underline;
 }
+
+#projectContent
+{
+    display: none;
+}

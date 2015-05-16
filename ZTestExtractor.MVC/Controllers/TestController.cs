@@ -24,5 +24,14 @@ namespace ZTestExtractor.MVC.Controllers
 
             return View(model);
         }
+
+        [HttpPost]
+        public PartialViewResult Show(int projectId)
+        {
+            var model = new ShowTestViewModel();
+            model.ProjectName = projectId.ToString();
+
+            return PartialView(model);
+        }
     }
 }

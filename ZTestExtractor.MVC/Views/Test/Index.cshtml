@@ -1,5 +1,9 @@
 ﻿@model ZTestExtractor.MVC.Models.Tests.TestViewModel
 
+@section scripts{
+    <script type="text/javascript" src="~/Scripts/Pages/Test/ProjectForm.js"></script>
+}
+
 <h2>@TestResource.Projects</h2>
 
 @if (Model.IsDatabaseConfiguredCorrectly)
@@ -8,23 +12,21 @@
 
     <br />
 
-    <select id="project">
-        @foreach(var project in Model.Projects)
-        {
-            <option value="@project.Id">@project.Name (@project.Key)</option>
-        }
-    </select>
+    <p>
+        <select id="project">
+            <option value="-1"> --@TestResource.SelectProject--</option>
+            @foreach (var project in Model.Projects)
+            {
+                <option value="@project.Id">@project.Name (@project.Key)</option>
+            }
+        </select>
+    </p>
+    
+    <article id="projectContent">
+        
+    </article>
 }
 else
-{   
-    <p class="warning">@TestResource.NoDatabaseConnection</p>
-    <p>@TestResource.YouMustConfigureYourDatabase</p>
-    
-    <p>
-        @Html.Raw(
-            TestResource.PleaseGoToConfiguration.F(
-                Html.ActionLink("configuration area", "Configure", "Home", new { area = "" })
-            )
-        )
-    </p>
+{
+    Html.RenderPartial("NoDatabaseConfiguration");
 }
