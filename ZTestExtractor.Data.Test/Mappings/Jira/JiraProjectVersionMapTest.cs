@@ -10,16 +10,17 @@ using ZTestExtractor.Data.Entities.Jira;
 namespace ZTestExtractor.Data.Test.Mappings.Jira
 {
     [TestFixture]
-    public class ProjectMapTest : MapTestBase
+    public class JiraProjectVersionMapTest : MapTestBase
     {
         [Test]
-        public void ProjectMapVerification()
+        public void JiraProjectVersionMapVerification()
         {
             //TODO: Test issue collection!
-            new PersistenceSpecification<JiraProject>(Session)
+            new PersistenceSpecification<JiraProjectVersion>(Session)
                 .CheckProperty(p => p.Id, 1)
-                .CheckProperty(p => p.Key, "Foo")
-                .CheckProperty(p => p.Name, "Bar")
+                .CheckProperty(p => p.Name, "Foo")
+                .CheckProperty(p => p.Description, "Bar")
+                .CheckReference(p => p.Project, new JiraProject() { Id = 5, Name = "Test Project", Key = "TEST" })
                 .VerifyTheMappings();
         }
     }

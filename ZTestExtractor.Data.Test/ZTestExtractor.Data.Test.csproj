@@ -57,7 +57,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Mappings\Jira\ProjectMapTest.cs" />
+    <Compile Include="Mappings\Jira\JiraProjectVersionMapTest.cs" />
+    <Compile Include="Mappings\Jira\JiraProjectMapTest.cs" />
     <Compile Include="Mappings\Jira\JiraIssueMapTest.cs" />
     <Compile Include="Mappings\MapTestBase.cs" />
     <Compile Include="Mappings\Zephyr\TestCycleMapTest.cs" />
