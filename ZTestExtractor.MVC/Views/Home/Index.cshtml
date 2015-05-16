@@ -1,6 +1,6 @@
 ﻿@model ZTestExtractor.MVC.Models.BaseModel
 
-<h2>Project overview</h2>
+<h2>@HomeResource.ProjectOverview</h2>
 
 <p>Welcome to ZTest Extractor! This tool will help you fetch those yummy test reports from Zephyr and let you export them as PDF documents! </p>
 
@@ -8,7 +8,5 @@
 
 @if (!Model.IsDatabaseConfiguredCorrectly)
 {
-    <p class="warning">Attention!</p>
-    <p>Your database has not been setup! Before you do anything you have to establish a connection to Jira/Zephyr!</p>
-    <p>Please go to the @Html.ActionLink("configuration area", "Configure", "Home", new { area = "" }) quickly!</p>
+    Html.RenderPartial("NoDatabaseConfiguration");
 }

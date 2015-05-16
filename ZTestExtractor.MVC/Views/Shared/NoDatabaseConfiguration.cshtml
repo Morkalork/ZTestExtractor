@@ -1,0 +1,10 @@
+﻿<p class="warning">@TestResource.NoDatabaseConnection</p>
+<p>@TestResource.YouMustConfigureYourDatabase</p>
+
+<p>
+    @Html.Raw(
+            TestResource.PleaseGoToConfiguration.F(
+                Html.ActionLink("configuration area", "Configure", "Home", new { area = "" })
+            )
+        )
+</p>
