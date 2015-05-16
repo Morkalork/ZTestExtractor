@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ZTestExtractor.Business.Bootstrapping.Registries;
-using ZTestExtractor.Core.Interfaces.Data;
+using ZTestExtractor.Data.Repositories;
 using ZTestExtractor.Data.Database;
 using ZTestExtractor.Data.Repositories.Jira;
 

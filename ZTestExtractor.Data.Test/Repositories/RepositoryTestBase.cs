@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ZTestExtractor.Core.Interfaces.Data;
+using ZTestExtractor.Core.Interfaces;
 using ZTestExtractor.Data.Repositories;
 
 namespace ZTestExtractor.Data.Test.Repositories

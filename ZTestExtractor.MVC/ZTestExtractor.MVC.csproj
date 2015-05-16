@@ -177,11 +177,10 @@
     <Content Include="Views\Home\Configure.cshtml" />
     <Content Include="Views\Test\Index.cshtml" />
     <Content Include="Views\Shared\NoDatabaseConfiguration.cshtml" />
-    <Content Include="Views\Test\Show.cshtml" />
+    <Content Include="Views\Project\Tests.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Project\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

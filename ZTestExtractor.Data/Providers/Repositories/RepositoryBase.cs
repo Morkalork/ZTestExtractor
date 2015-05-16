@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ZTestExtractor.Core.Interfaces.Data;
+using ZTestExtractor.Core.Interfaces;
 using NHibernate.FlowQuery;
 using NHibernate.FlowQuery.Core;
 

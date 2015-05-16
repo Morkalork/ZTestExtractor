@@ -43,8 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Extensions\StringExtensions.cs" />
-    <Compile Include="Interfaces\Data\IEntity.cs" />
-    <Compile Include="Interfaces\Data\IRepository^1.cs" />
+    <Compile Include="Interfaces\IEntity.cs" />
     <Compile Include="Logging\ISystemLog.cs" />
     <Compile Include="Logging\Logger.cs" />
     <Compile Include="Models\Configurations\DatabaseConfigurationModel.cs" />
@@ -54,6 +53,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Interfaces\Data\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ZTestExtractor.Core.Interfaces.Data
+namespace ZTestExtractor.Core.Interfaces
 {
     public interface IEntity
     {
