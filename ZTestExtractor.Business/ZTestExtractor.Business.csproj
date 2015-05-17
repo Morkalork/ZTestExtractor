@@ -60,8 +60,8 @@
     <Compile Include="Bootstrapping\Bootstrapper.cs" />
     <Compile Include="Bootstrapping\Registries\CoreRegistry.cs" />
     <Compile Include="Bootstrapping\Registries\DataRegistry.cs" />
-    <Compile Include="Managers\BaseManager.cs" />
     <Compile Include="Managers\Configurations\DatabaseConfigurationManager.cs" />
+    <Compile Include="Managers\IManager.cs" />
     <Compile Include="Managers\Jira\JiraIssueManager.cs" />
     <Compile Include="Managers\Jira\JiraProjectManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

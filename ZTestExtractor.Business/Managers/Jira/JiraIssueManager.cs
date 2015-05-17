@@ -9,7 +9,7 @@ using ZTestExtractor.Data.Repositories.Jira;
 
 namespace ZTestExtractor.Business.Managers.Jira
 {
-    public class JiraIssueManager : BaseManager
+    public class JiraIssueManager : IManager
     {
     }
 }

@@ -10,7 +10,7 @@ using ZTestExtractor.Data.Database;
 
 namespace ZTestExtractor.Business.Managers.Configurations
 {
-    public class DatabaseConfigurationManager : BaseManager
+    public class DatabaseConfigurationManager : IManager
     {
         public Result Save(DatabaseConfigurationModel model)
         {

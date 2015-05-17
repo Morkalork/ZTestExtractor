@@ -10,12 +10,18 @@ using ZTestExtractor.Models.Jira;
 
 namespace ZTestExtractor.Business.Managers.Jira
 {
-    public class JiraProjectManager : BaseManager
+    public class JiraProjectManager : IManager
     {
+        private IJiraProjectRepository _projectRepository;
+
+        public JiraProjectManager(IJiraProjectRepository projectRepository)
+        {
+            _projectRepository = projectRepository;
+        }
+
         public IEnumerable<JiraProjectDisplayModel> GetAllDisplayModels()
         {
-            var repository = GetRepository<JiraProjectRepository>();
-            return repository
+            return _projectRepository
                 .GetAllDisplayModels();
         }
     }
