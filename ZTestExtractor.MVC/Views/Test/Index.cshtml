@@ -12,7 +12,7 @@
 
     <br />
 
-    <p>
+    <p id="projectSelection">
         <select id="project">
             <option value="-1"> --@TestResource.SelectProject--</option>
             @foreach (var project in Model.Projects)
@@ -20,6 +20,9 @@
                 <option value="@project.Id">@project.Name (@project.Key)</option>
             }
         </select>
+    </p>
+    
+    <p id="versionSelection">
     </p>
     
     <article id="projectContent">

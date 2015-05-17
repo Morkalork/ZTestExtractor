@@ -140,7 +140,8 @@
     </Compile>
     <Compile Include="Models\BaseModel.cs" />
     <Compile Include="Models\Configurations\ConfigurationsViewModel.cs" />
-    <Compile Include="Models\Tests\ShowTestViewModel.cs" />
+    <Compile Include="Models\Project\ShowTestViewModel.cs" />
+    <Compile Include="Models\Project\VersionViewModel.cs" />
     <Compile Include="Models\Tests\TestViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Structure\NinjectDependencyResolver.cs" />
@@ -200,6 +201,7 @@
     <Content Include="Views\Test\Index.cshtml" />
     <Content Include="Views\Shared\NoDatabaseConfiguration.cshtml" />
     <Content Include="Views\Project\Tests.cshtml" />
+    <Content Include="Views\Project\Versions.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

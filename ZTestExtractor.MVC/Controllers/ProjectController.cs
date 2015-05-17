@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using ZTestExtractor.MVC.Models.Tests;
+using ZTestExtractor.MVC.Models.Project;
 
 namespace ZTestExtractor.MVC.Controllers
 {
@@ -16,16 +16,17 @@ namespace ZTestExtractor.MVC.Controllers
         }
 
         [HttpPost]
-        public PartialViewResult Tests(int projectId)
+        public PartialViewResult Tests(int projectId, int projectVersionId)
         {
             var model = new ShowTestViewModel();
             model.ProjectName = projectId.ToString();
+            model.ProjectVersion = projectVersionId.ToString();
 
             return PartialView(model);
         }
 
         [HttpPost]
-        public JsonResult Versions(int projectId)
+        public PartialViewResult Versions(int projectId)
         {
             throw new NotImplementedException();
         }

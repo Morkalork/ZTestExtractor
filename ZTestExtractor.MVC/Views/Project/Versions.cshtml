@@ -1,0 +1,9 @@
+﻿@model ZTestExtractor.MVC.Models.Project.VersionViewModel
+
+<select id="projectVersion">
+    <option value="-1"> --@TestResource.SelectVersion--</option>
+    @foreach (var project in Model.ProjectVersionDisplayModels)
+    {
+        <option value="@project.Id">@project.VersionName</option>
+    }
+</select>

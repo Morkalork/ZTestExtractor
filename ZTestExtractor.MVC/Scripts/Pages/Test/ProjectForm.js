@@ -1,6 +1,38 @@
 ﻿(function ()
 {
-    function loadProjectContent(projectId)
+    function loadTests()
+    {
+        var projectId = $("#project").val();
+        if (projectId === "-1")
+        {
+            return;
+        }
+
+        var projectVersionId = $("#projectVersion").val();
+        if (projectVersion === "-1")
+        {
+            return;
+        }
+
+        var data = {
+            projectId: projectId,
+            projectVersionId: projectVersionId
+        };
+
+        $.ajax({
+            url: "/Project/Tests",
+            type: "POST",
+            data: data
+        })
+        .done(function (result)
+        {
+            $("#projectContent")
+                .html(result)
+                .slideDown();
+        });
+    }
+
+    function loadProjectVersionContent(projectVersionId)
     {
         var projectId = $("#project").val();
         if (projectId === "-1")
@@ -13,13 +45,12 @@
         };
 
         $.ajax({
-            url: "/Test/Show",
+            url: "/Project/Versions",
             type: "POST",
             data: data
         })
         .done(function (result)
         {
-            console.log(result);
             $("#projectContent")
                 .html(result)
                 .slideDown();
@@ -29,7 +60,7 @@
     function bind()
     {
         $("#project")
-            .on("change", loadProjectContent);
+            .on("change", loadProjectVersionContent);
     }
 
     function init()

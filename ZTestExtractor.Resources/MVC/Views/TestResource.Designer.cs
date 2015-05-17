@@ -106,6 +106,15 @@ namespace ZTestExtractor.Resources.MVC.Views {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Select version.
+        /// </summary>
+        public static string SelectVersion {
+            get {
+                return ResourceManager.GetString("SelectVersion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to You must configure your database in order to view your projects!.
         /// </summary>
         public static string YouMustConfigureYourDatabase {
