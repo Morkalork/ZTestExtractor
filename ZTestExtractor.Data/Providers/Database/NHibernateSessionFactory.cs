@@ -15,34 +15,10 @@ using ZTestExtractor.Data.Entities;
 
 namespace ZTestExtractor.Data.Database
 {
-    public static class SessionFactory
+    public class NHibernateSessionFactory
     {
-        private static ISessionFactory _sessionFactory;
-
-        static readonly object factorylock = new object();
-
-        public static bool IsSessionPossible()
+        public ISessionFactory GetSessionFactory()
         {
-            try
-            {
-                var session = OpenSession();
-
-                session.Close();
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-
-            return true;
-        }
-
-        public static ISession OpenSession()
-        {
-            lock (factorylock)
-            {
-                if (_sessionFactory == null)
-                {
                     var connectionString = GetConnectionString();
 
                     var cfg = Fluently.Configure()
@@ -56,11 +32,7 @@ namespace ZTestExtractor.Data.Database
                            m.FluentMappings.AddFromAssemblyOf<JiraProject>()
                        );
 
-                    _sessionFactory = cfg.BuildSessionFactory();
-                }
-            }
-
-            return _sessionFactory.OpenSession();
+            return cfg.BuildSessionFactory();
         }
 
         private static string GetConnectionString()

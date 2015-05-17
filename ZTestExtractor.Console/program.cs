@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ZTestExtractor.Business.Bootstrapping;
 using ZTestExtractor.Business.Managers.Jira;
 using ZTestExtractor.Core.Logging;
 using output = System.Console;
+using Ninject;
 
 namespace ZTestExtractor.Console
 {
@@ -15,7 +17,9 @@ namespace ZTestExtractor.Console
         {
             Logger.Configure();
 
-            var projects = new JiraProjectManager()
+            var kernel = Bootstrapper.Bootstrap();
+
+            var projects = kernel.Get<IJiraProjectManager>()
                 .GetAllDisplayModels();
 
             if (projects != null)

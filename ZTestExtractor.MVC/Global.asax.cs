@@ -8,6 +8,7 @@ using System.Web.Optimization;
 using System.Web.Routing;
 using ZTestExtractor.Business.Bootstrapping;
 using ZTestExtractor.Core.Logging;
+using ZTestExtractor.MVC.Structure;
 
 namespace ZTestExtractor.MVC
 {
@@ -21,7 +22,6 @@ namespace ZTestExtractor.MVC
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
             Logger.Configure();
-            Bootstrapper.Bootstrap();
         }
     }
 }

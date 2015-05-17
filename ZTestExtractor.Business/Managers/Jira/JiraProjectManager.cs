@@ -10,7 +10,7 @@ using ZTestExtractor.Models.Jira;
 
 namespace ZTestExtractor.Business.Managers.Jira
 {
-    public class JiraProjectManager : IManager
+    public class JiraProjectManager : IJiraProjectManager
     {
         private IJiraProjectRepository _projectRepository;
 

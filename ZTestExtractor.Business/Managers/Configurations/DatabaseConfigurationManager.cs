@@ -74,7 +74,21 @@ namespace ZTestExtractor.Business.Managers.Configurations
 
         public bool IsDatabaseConfiguredCorrectly()
         {
-            return SessionFactory.IsSessionPossible();
+            var sessionFactory = new NHibernateSessionFactory()
+                .GetSessionFactory();
+
+            try
+            {
+                var session = sessionFactory.OpenSession();
+
+                session.Close();
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
+            return true;
         }
     }
 }

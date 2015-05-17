@@ -7,7 +7,7 @@ using ZTestExtractor.Core.Interfaces;
 
 namespace ZTestExtractor.Data.Repositories
 {
-    public interface IRepository<TEntity>
+    public interface IRepository<TEntity> : IRepository
         where TEntity : class, IEntity
     {
         TEntity GetById(int id);

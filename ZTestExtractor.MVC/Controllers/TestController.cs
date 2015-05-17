@@ -11,9 +11,16 @@ namespace ZTestExtractor.MVC.Controllers
 {
     public class TestController : BaseController
     {
+        private IJiraProjectManager _projectManager;
+
+        public TestController(IJiraProjectManager projectManager)
+        {
+            _projectManager = projectManager;
+        }
+
         public ActionResult Index()
         {
-            var projects = new JiraProjectManager()
+            var projects = _projectManager
                 .GetAllDisplayModels();
 
             var model = new TestViewModel
