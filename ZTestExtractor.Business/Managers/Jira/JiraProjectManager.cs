@@ -24,5 +24,11 @@ namespace ZTestExtractor.Business.Managers.Jira
             return _projectRepository
                 .GetAllDisplayModels();
         }
+
+
+        public IEnumerable<JiraProjectVersionDisplayModel> GetVersionsForProject(int projectId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

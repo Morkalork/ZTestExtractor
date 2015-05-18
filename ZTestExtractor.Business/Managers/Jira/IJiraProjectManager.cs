@@ -6,5 +6,7 @@ namespace ZTestExtractor.Business.Managers.Jira
     public interface IJiraProjectManager : IManager
     {
         IEnumerable<JiraProjectDisplayModel> GetAllDisplayModels();
+
+        IEnumerable<JiraProjectVersionDisplayModel> GetVersionsForProject(int projectId);
     }
 }

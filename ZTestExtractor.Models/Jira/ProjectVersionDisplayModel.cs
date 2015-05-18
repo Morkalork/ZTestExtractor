@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ZTestExtractor.Models.Jira
 {
-    public class ProjectVersionDisplayModel
+    public class JiraProjectVersionDisplayModel
     {
         public int Id { get; set; }
 

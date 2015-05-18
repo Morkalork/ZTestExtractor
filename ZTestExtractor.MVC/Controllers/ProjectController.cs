@@ -3,12 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using ZTestExtractor.Business.Managers.Jira;
 using ZTestExtractor.MVC.Models.Project;
 
 namespace ZTestExtractor.MVC.Controllers
 {
     public class ProjectController : Controller
     {
+        private IJiraProjectManager _projectManager;
+
+        public ProjectController(IJiraProjectManager projectManager)
+        {
+            _projectManager = projectManager;
+        }
+
         // GET: Project
         public ActionResult Index()
         {

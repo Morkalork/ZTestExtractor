@@ -8,6 +8,6 @@ namespace ZTestExtractor.MVC.Models.Project
 {
     public class VersionViewModel : BaseModel
     {
-        public IEnumerable<ProjectVersionDisplayModel> ProjectVersionDisplayModels { get; set; }
+        public IEnumerable<JiraProjectVersionDisplayModel> ProjectVersionDisplayModels { get; set; }
     }
 }
